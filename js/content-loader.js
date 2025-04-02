@@ -214,9 +214,6 @@ function loadContent(page) {
         if (content[page].body) {
             document.getElementById('content').innerHTML = content[page].body;
         }
-        if (content[page].meta) {
-            document.getElementById('dynamic-meta').innerHTML = content[page].meta;
-        }
         if (content[page].footer) {
             document.getElementById('dynamic-footer').innerHTML = content[page].footer;
         }
