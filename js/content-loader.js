@@ -207,7 +207,22 @@ const content = {
     }
 };
 function loadContent(page) {
-    document.getElementById('dynamic-header').innerHTML = content[page].header;
-    document.getElementById('content').innerHTML = content[page].body;
+    if (content[page]) {
+        if (content[page].header) {
+            document.getElementById('dynamic-header').innerHTML = content[page].header;
+        }
+        if (content[page].body) {
+            document.getElementById('content').innerHTML = content[page].body;
+        }
+        if (content[page].meta) {
+            document.getElementById('dynamic-meta').innerHTML = content[page].meta;
+        }
+        if (content[page].footer) {
+            document.getElementById('dynamic-footer').innerHTML = content[page].footer;
+        }
+        if (content[page].title) {
+            document.title = content[page].title;
+        }
+    }
 }
 loadContent('home');
