@@ -3,62 +3,106 @@ const content = {
         header: `
             <h1>Language Lessons by χαος</h1>
             <nav>
-                <a href="#" onclick="loadContent('dutch')">Dutch</a>
+                <a href="#" onclick="loadContent('dutch_EN')">Dutch</a>
             </nav>
         `,
         body: `
             <h2>Welcome!</h2>
-            <p>
+            <p style="color: dimgrey;">
                 Thank you for stopping by! I am a volunteer language teacher, currently teaching Dutch for the first time!
             </p>
-            <p>
-                This website is currently hosted by Github Pages or locally, by downloading this folder. I advise the use of a trusted and up-to-date browser, inspection of the source code or asking me for the GitHub repository link - should there be any privacy concerns! This is a hobby and volunteer project and I don't use any cookies or any scripts other than those comprised of official JS and ThreeJS libraries.
+            <p style="font-size:0.9em; color: gray;font-style: oblique;">
+                This website is currently hosted by Github Pages or locally, by downloading <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>
+                No cookies or scripts other than official JS, CSS and Three.js are used. 
             </p>
         `
     },
-    dutch: {
+    dutch_EN: {
         header: `
             <h1>Dutch Lessons</h1>
             <nav>
                 <a href="#" onclick="loadContent('home')">Home</a>
-                <a href="#" onclick="loadContent('lesson1')">Lessons</a>
+                <a href="#" onclick="loadContent('dutch1_NL')">Start</a>
                 <a href="#" onclick="loadContent('exercises')">Exercises</a>
             </nav>
         `,
         body: `
+            <div class="switch" href="#" onclick="loadContent('dutch_NL')">Switch Language</div>
             <h2>Dutch Lessons</h2>
-            <p>Explore our interactive 3D environment and learn Dutch with style.</p>
+            <p>Interactive Dutch beginner to intermediate class with exercises.</p>
+            <div class="content-links">
+                <li><a href="#" onclick="loadContent('dutch1_NL')">Lesson 1: Introduction and exercises</a></li>
+            </div>
         `
     },
-    lesson1: {
+    dutch_NL: {
         header: `
             <h1>Dutch Lessons</h1>
             <nav>
                 <a href="#" onclick="loadContent('home')">Home</a>
-                <a href="#" onclick="loadContent('dutch')">Dutch</a>
-                <a href="#" onclick="loadContent('lesson2')">Next</a>
+                <a href="#" onclick="loadContent('Dutch1_NL')">Start</a>
                 <a href="#" onclick="loadContent('exercises')">Exercises</a>
             </nav>
         `,
         body: `
-            <h2>Lesson 1: Introduction and exercise</h2>
-            <p>Welkom bij de eerste les Nederlands. In deze les leer je de basisprincipes van de taal.</p>
+            <div class="switch" href="#" onclick="loadContent('dutch_EN')">Switch Language</div>
+            <h2>Lessen Nederlands</h2>
+            <p>Interactieve, beginner tot intermediaire Nederlands klas met oefeningen.</p>
+            <div class="content-links">
+                <li><a href="#" onclick="loadContent('dutch1_NL')">Les 1: Introductie en oefeningen</a></li>
+            </div>
         `
     },
-    lesson2: {
+    dutch1_EN: {
         header: `
             <h1>Dutch Lessons</h1>
             <nav>
                 <a href="#" onclick="loadContent('home')">Home</a>
-                <a href="#" onclick="loadContent('dutch')">Dutch</a>
-                <a href="#" onclick="loadContent('lesson1')">Back</a>
-                <a href="#" onclick="loadContent('lesson3')">Next</a>
+                <a href="#" onclick="loadContent('dutch_EN')">Back</a>
+                <a href="#" onclick="loadContent('dutch2_EN')">Next</a>
                 <a href="#" onclick="loadContent('exercises')">Exercises</a>
             </nav>
         `,
         body: `
-            <h2>Lesson 2: Vocabulary and exercise</h2>
-            <p>In deze les leer je meer over de Nederlandse woordenschat.</p>
+            <div class="switch" href="#" onclick="loadContent('dutch1_NL')">Switch Language</div>
+            <h2>Lesson 1: Introduction and exercises</h2>
+            <p class="description">In the first lesson, I attempt to transfom my passion for language into an expanded introduction to the language that is most boring to me - Dutch. Herein, I shall discuss the etymology and origin and display the form of the language through the aid of history and art.</p>
+
+            <div class="content-links">
+                <h3>Inhoud:</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('dutch1_1_EN')">Origin and etymology</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_2_EN')">The form of the language</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_3_EN')">Grammatics</a></li>
+                </ul>
+            </div>
+
+        `
+    },
+    dutch1_NL: {
+        header: `
+            <h1>Dutch Lessons</h1>
+            <nav>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('dutch_NL')">Back</a>
+                <a href="#" onclick="loadContent('dutch2_NL')">Next</a>
+                <a href="#" onclick="loadContent('exercises')">Exercises</a>
+            </nav>
+        `,
+        body: `
+            <div class="switch" href="#" onclick="loadContent('dutch1_EN')">Switch Language</div>
+            <h2>Les 1: Introductie en oefeningen</h2>
+            <p class="description">In de eerste les, tracht ik mijn passie voor taal om te zetten in een uitgebreide kennismaking met de taal die het meest saai voor mij is - Nederlands. Hierbij zal ik de etymologie en oorsprong bespreken en de vorm van de taal uitbeelden met behulp van (m.b.v) historiek en kunst.</p>
+
+            <div class="content-links">
+                <h3>Inhoud:</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('dutch1_1_NL')">Oorsprong en etymologie</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_2_NL')">De vorm van de taal</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_3_NL')">Grammatica</a></li>
+                </ul>
+            </div>
+
         `
     },
     exercises: {
@@ -71,6 +115,94 @@ const content = {
         body: `
             <h2>Exercises</h2>
             <p>Test your knowledge with these exercises.</p>
+        `
+    },
+    dutch1_1_EN: {
+        header: `
+            <h1>Dutch Lessons</h1>
+            <nav>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('lesson1')">Back</a>
+                <a href="#" onclick="loadContent('Dutch1_2')">Next</a>
+                <a href="#" onclick="loadContent('exercises')">Exercises</a>
+            </nav>
+        `,
+        body: `
+            <div class="switch" href="#" onclick="loadContent('dutch1_1_NL')">Switch Language</div>
+            <h2>Origin and etymology</h2>
+            <div class="content-image">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Image 1">
+            </div>
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo European --> Proto-Germanic --> West Germanic --> West Low Franconian --> Dutch </p>
+        `
+    },
+    dutch1_1_NL: {
+        header: `
+            <h1>Dutch Lessons</h1>
+            <nav>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('lesson1')">Back</a>
+                <a href="#" onclick="loadContent('Dutch1_2')">Next</a>
+                <a href="#" onclick="loadContent('exercises')">Exercises</a>
+            </nav>
+        `,
+        body: `
+            <div class="switch" href="#" onclick="loadContent('dutch1_1_EN')">Switch Language</div>
+            <h2>Oorsprong en etymologie</h2>
+            <div class="content-image">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Image 1">
+            </div>
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europees --> Proto-Germaans --> West Germaans --> West Lagefrankisch --> Nederlands </p>
+        `
+    },
+    Dutch1_2_EN: {
+        header: `
+            <h1>Dutch Lessons</h1>
+            <nav>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('Dutch1_1')">Back</a>
+                <a href="#" onclick="loadContent('Dutch1_3')">Next</a>
+                <a href="#" onclick="loadContent('exercises')">Exercises</a>
+            </nav>
+        `,
+        body: `
+            <h2>Vorm van de taal</h2>
+            <div class="content-list">
+            <p></p>
+        `
+    },
+    dutch2_EN: {
+        header: `
+            <h1>Dutch Lessons</h1>
+            <nav>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('dutch')">Dutch</a>
+                <a href="#" onclick="loadContent('lesson1')">Back</a>
+                <a href="#" onclick="loadContent('lesson3')">Next</a>
+                <a href="#" onclick="loadContent('exercises')">Exercises</a>
+            </nav>
+        `,
+        body: `
+            <div class="switch" href="#" onclick="loadContent('dutch2_NL')">Switch Language</div>
+            <h2>Lesson 2</h2>
+            <p>.</p>
+        `
+    },
+    dutch2_NL: {
+        header: `
+            <h1>Dutch Lessons</h1>
+            <nav>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('dutch')">Dutch</a>
+                <a href="#" onclick="loadContent('lesson1')">Back</a>
+                <a href="#" onclick="loadContent('lesson3')">Next</a>
+                <a href="#" onclick="loadContent('exercises')">Exercises</a>
+            </nav>
+        `,
+        body: `
+            <div class="switch" href="#" onclick="loadContent('dutch2_EN')">Switch Language</div>
+            <h2>Les 2</h2>
+            <p></p>
         `
     }
 };

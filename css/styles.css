@@ -4,6 +4,7 @@ body, html {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #174235, #442a0d);
 }
 #background-canvas {
     position: fixed;
@@ -35,6 +36,14 @@ header nav a {
 }
 header nav a:hover {
     color: #ffd700;
+}
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    cursor: pointer;
+    user-select: none;
 }
 .content {
     position: relative;
