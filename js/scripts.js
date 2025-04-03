@@ -77,6 +77,16 @@ if (orbCanvas) {
     hypnoOrb.addEventListener("mouseleave", () => {
         hypnoOrb.classList.add("hovered");
     });
+    let hypnoOn = true, hypnoOnN = 0;
+    hypnoOrb.addEventListener("click", () => {
+        if (hypnoOn) {
+            const id = hypnoOnN >= 4 ? "yellow-flash-bar" : "flash-bar";
+            document.body.appendChild(Object.assign(document.createElement("div"), { id, textContent: hypnoOnN === 4 ? "WOAH-THERE" : "HYPNO-ORB" }));
+            setTimeout(() => document.getElementById(id)?.remove(), 3000);
+            hypnoOnN = hypnoOnN >= 4 ? 0 : hypnoOnN + 1;
+        }
+        hypnoOn = !hypnoOn;
+    });
 }
 function setContainerAlt() {
     document.querySelector('.content-image').setAttribute('alt', document.querySelector('.content-image img').getAttribute('alt'));
