@@ -41,6 +41,43 @@ const torusAnimation = (() => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 })();
+const orbCanvas = document.getElementById("orb-canvas");
+if (orbCanvas) {
+    const renderer = new THREE.WebGLRenderer({ canvas: orbCanvas, antialias: true, alpha: true });
+    renderer.setSize(orbCanvas.clientWidth, orbCanvas.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, orbCanvas.clientWidth / orbCanvas.clientHeight, 0.1, 1000);
+    camera.position.z = 6;
+    const sphereGeometry = new THREE.SphereGeometry(2.5, 7, 7);
+    const sphereMaterial = new THREE.MeshBasicMaterial({
+        color: new THREE.Color(0x0088ff),
+        wireframe: true,
+        transparent: true,
+        opacity: 0.6
+    });
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    scene.add(sphere);
+    function animateOrb() {
+        requestAnimationFrame(animateOrb);
+        sphere.rotation.x += 0.001;
+        sphere.rotation.y += 0.002;
+        let time = Date.now() * 0.0005;
+        sphereMaterial.color.setHSL((0.5 + 0.5 * Math.sin(time)) % 1, 0.6, 0.5);
+        renderer.render(scene, camera);
+    }
+    animateOrb();
+    window.addEventListener("resize", () => {
+        const rect = orbCanvas.getBoundingClientRect();
+        camera.aspect = rect.width / rect.height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(rect.width, rect.height);
+    });
+    const hypnoOrb = document.getElementById("hypno-orb");
+    hypnoOrb.addEventListener("mouseleave", () => {
+        hypnoOrb.classList.add("hovered");
+    });
+}
 function setContainerAlt() {
     document.querySelector('.content-image').setAttribute('alt', document.querySelector('.content-image img').getAttribute('alt'));
 };
