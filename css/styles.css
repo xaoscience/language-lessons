@@ -14,7 +14,6 @@ body, html {
     z-index: -1;
     pointer-events: none;
     background: linear-gradient(to bottom, #174235, #442a0d);
-
 }
 header {
     position: relative;
@@ -60,6 +59,69 @@ header nav a:hover {
     cursor: pointer;
     color: inherit;
 }
+@keyframes breathe {
+    0%, 100% {
+        opacity: 0.125;
+    }
+    50% {
+        opacity: 0.0625;
+    }
+}
+#hypno-orb {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: antiquewhite opacity 0 ;
+    border-radius: 0.2cm;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0.6;
+    animation: breathe 12s infinite;
+}
+#hypno-orb:hover {
+    opacity: 0.7;
+    pointer-events: auto;
+    visibility: visible;
+    cursor: pointer;
+    animation: none;
+}
+#hypno-orb.hovered {
+    opacity: 0;
+    pointer-events: auto;
+    animation: none;
+}
+@keyframes breathe1 {
+    0%, 100% {
+        opacity: 0.125;
+    }
+    50% {
+        opacity: 0.625;
+    }
+}
+#hypno-orb.hovered:hover {
+    opacity: 0.7;
+    visibility: visible;
+    cursor: pointer;
+    animation: breathe1 12s infinite;
+}
+#orb-canvas {
+    opacity: 0.6;
+    display: block;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+#orb-canvas:hover {
+    opacity: 0.7;
+    pointer-events: auto;
+    visibility: visible;
+}
 #EN_NL_switch {
     border: none;
     background: none;
@@ -71,54 +133,6 @@ header nav a:hover {
     transform: translateX(-50%);
     user-select: none;
     position: absolute;
-}
-#hypno-orb {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    border: none;
-    background-color: transparent;
-    border-radius: 12px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
-}
-#hypno-orb:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1); /* Subtle zoom effect */
-}
-.orb {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    animation: spin 2s linear infinite;
-}
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-#hypno-orb:hover .orb {
-    border-color: rgba(0, 0, 0, 0.6);
-    animation: spin-reverse 2s linear infinite;
-}
-@keyframes spin-reverse {
-    0% {
-        transform: rotate(360deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
 }
 .content {
     position: relative;
