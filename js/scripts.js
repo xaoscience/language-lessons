@@ -77,13 +77,17 @@ if (orbCanvas) {
     hypnoOrb.addEventListener("mouseleave", () => {
         hypnoOrb.classList.add("hovered");
     });
-    let hypnoOn = true, hypnoOnN = 0;
+    let hypnoOn = true, hypnoOnN = -2;
     hypnoOrb.addEventListener("click", () => {
         if (hypnoOn) {
-            const id = hypnoOnN >= 4 ? "yellow-flash-bar" : "flash-bar";
-            document.body.appendChild(Object.assign(document.createElement("div"), { id, textContent: hypnoOnN === 4 ? "WOAH-THERE" : "HYPNO-ORB" }));
-            setTimeout(() => document.getElementById(id)?.remove(), 3000);
-            hypnoOnN = hypnoOnN >= 4 ? 0 : hypnoOnN + 1;
+            if (hypnoOnN >= 0) {
+                const id = hypnoOnN >= 5 ? "yellow-flash-bar" : "flash-bar";
+                document.body.appendChild(Object.assign(document.createElement("div"), { id, textContent: hypnoOnN === 5 ? "WOAH-THERE" : "HYPNO-ORB" }));
+                setTimeout(() => document.getElementById(id)?.remove(), 3000);
+                hypnoOnN = hypnoOnN >= 5 ? 0 : hypnoOnN + 1;
+            } else {
+                hypnoOnN++;
+            }
         }
         hypnoOn = !hypnoOn;
     });
