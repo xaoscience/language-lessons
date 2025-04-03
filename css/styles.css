@@ -123,6 +123,7 @@ header nav a:hover {
     visibility: visible;
 }
 #EN_NL_switch {
+    position: relative;
     border: none;
     background: none;
     align-items: center;
@@ -132,7 +133,6 @@ header nav a:hover {
     left: 50%;
     transform: translateX(-50%);
     user-select: none;
-    position: absolute;
 }
 .content {
     position: relative;
