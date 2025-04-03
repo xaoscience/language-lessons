@@ -147,7 +147,7 @@ const content = {
             </nav>
         `,
         body: `
-            <button id="EN_NL_switch" class="switch" role="button" href="#" onclick="loadContent('dutch1_1_EN')">Switch Language</div>
+            <button id="EN_NL_switch" class="switch" role="button" href="#" onclick="loadContent('dutch1_1_EN')">Switch Language</button>
             <h2>Oorsprong en etymologie</h2>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Een hiërarchische boomdiagram van de hele germaanse tak.">
