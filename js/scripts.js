@@ -1,4 +1,4 @@
-(() => {
+const torusAnimation = (() => {
     const canvas = document.getElementById('background-canvas');
     if (!canvas) return;
     const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
@@ -41,3 +41,6 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 })();
+const setContainerAlt = () => {
+    document.querySelector('.content-image').setAttribute('alt', document.querySelector('.content-image img').getAttribute('alt'));
+};

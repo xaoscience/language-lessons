@@ -131,7 +131,7 @@ const content = {
             <div class="switch" href="#" onclick="loadContent('dutch1_1_NL')">Switch Language</div>
             <h2>Origin and etymology</h2>
             <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Image 1">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="A hierarchical tree diagram of the entire germanic branch.">
             </div>
             <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo European --> Proto-Germanic --> West Germanic --> West Low Franconian --> Dutch </p>
         `
@@ -150,7 +150,7 @@ const content = {
             <div class="switch" href="#" onclick="loadContent('dutch1_1_EN')">Switch Language</div>
             <h2>Oorsprong en etymologie</h2>
             <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Image 1">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Een hiërarchische boomdiagram van de hele germaanse tak.">
             </div>
             <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europees --> Proto-Germaans --> West Germaans --> West Lagefrankisch --> Nederlands </p>
         `
@@ -213,6 +213,9 @@ function loadContent(page) {
         }
         if (content[page].body) {
             document.getElementById('content').innerHTML = content[page].body;
+            if (document.querySelectorAll('#content .content-image').length > 0) {
+                setContainerAlt();
+            }
         }
         if (content[page].footer) {
             document.getElementById('dynamic-footer').innerHTML = content[page].footer;
