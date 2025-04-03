@@ -77,7 +77,7 @@ if (orbCanvas) {
     hypnoOrb.addEventListener("mouseleave", () => {
         hypnoOrb.classList.add("hovered");
     });
-    let hypnoOn = true, hypnoOnN = -2;
+    let hypnoOn = true, hypnoOnN = -1;
     hypnoOrb.addEventListener("click", () => {
         if (hypnoOn) {
             if (hypnoOnN >= 0) {
