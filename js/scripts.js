@@ -161,9 +161,11 @@ if (orbCanvas) {
         camera.updateProjectionMatrix();
         renderer.setSize(rect.width, rect.height);
     });
-    ["hypno-orb", "controls-container"].forEach(id =>
-        document.getElementById(id)?.addEventListener("mouseleave", () =>
-            document.getElementById(id)?.classList.add("hovered")
+    const hypnoOrb = document.getElementById("hypno-orb");
+    const controlsContainer = document.getElementById("controls-container");
+    [hypnoOrb, controlsContainer].forEach(element =>
+        element?.addEventListener("mouseleave", () =>
+            element?.classList.add("hovered")
         )
     );
     let hypnoOn = true, hypnoOnN = -1;
@@ -181,10 +183,6 @@ if (orbCanvas) {
         if (hypnoOn) {
             if (hypnoOnN >= 0) {
                 const id = hypnoOnN >= 5 ? "yellow-flash-bar" : "flash-bar";
-                if (!flashText) {
-                    console.error("flashText is undefined");
-                    return;
-                }
                 const flashBar = Object.assign(document.createElement("div"), {
                     id,
                     textContent: hypnoOnN === 5 ? "WOAH-THERE" : flashText
