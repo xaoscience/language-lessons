@@ -41,6 +41,12 @@ const torusAnimation = (() => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 })();
-const setContainerAlt = () => {
+function setContainerAlt() {
     document.querySelector('.content-image').setAttribute('alt', document.querySelector('.content-image img').getAttribute('alt'));
 };
+const setOrbAlt = (() => {
+    const orb = document.querySelector('#hypno-orb');
+    if (orb) {
+        orb.setAttribute('aria-label', "A button to hide the content and show only the colourful background with a 3D wireframe of a large orb and larger torus, changing colours.");
+    }
+})();

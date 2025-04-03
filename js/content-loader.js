@@ -27,7 +27,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch_NL')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch_NL')">Switch Language</button>
             <h2>Dutch Lessons</h2>
             <p>Interactive Dutch beginner to intermediate class with exercises.</p>
             <div class="content-links">
@@ -45,7 +45,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch_EN')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch_EN')">Switch Language</button>
             <h2>Lessen Nederlands</h2>
             <p>Interactieve, beginner tot intermediaire Nederlands klas met oefeningen.</p>
             <div class="content-links">
@@ -64,7 +64,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch1_NL')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch1_NL')">Switch Language</button>
             <h2>Lesson 1: Introduction and exercises</h2>
             <p class="description">In the first lesson, I attempt to transfom my passion for language into an expanded introduction to the language that is most boring to me - Dutch. Herein, I shall discuss the etymology and origin and display the form of the language through the aid of history and art.</p>
 
@@ -90,7 +90,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch1_EN')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch1_EN')">Switch Language</button>
             <h2>Les 1: Introductie en oefeningen</h2>
             <p class="description">In de eerste les, tracht ik mijn passie voor taal om te zetten in een uitgebreide kennismaking met de taal die het meest saai voor mij is - Nederlands. Hierbij zal ik de etymologie en oorsprong bespreken en de vorm van de taal uitbeelden met behulp van (m.b.v) historiek en kunst.</p>
 
@@ -128,7 +128,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch1_1_NL')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch1_1_NL')">Switch Language</button>
             <h2>Origin and etymology</h2>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="A hierarchical tree diagram of the entire germanic branch.">
@@ -147,7 +147,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch1_1_EN')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch1_1_EN')">Switch Language</div>
             <h2>Oorsprong en etymologie</h2>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Een hiërarchische boomdiagram van de hele germaanse tak.">
@@ -183,7 +183,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch2_NL')">Switch Language</div>
+            <button class="switch" role="button" href="#" onclick="loadContent('dutch2_NL')">Switch Language</button>
             <h2>Lesson 2</h2>
             <p>.</p>
         `
@@ -200,7 +200,7 @@ const content = {
             </nav>
         `,
         body: `
-            <div class="switch" href="#" onclick="loadContent('dutch2_EN')">Switch Language</div>
+            < class="switch" role="button" href="#" onclick="loadContent('dutch2_EN')">Switch Language</div>
             <h2>Les 2</h2>
             <p></p>
         `
@@ -224,5 +224,20 @@ function loadContent(page) {
             document.title = content[page].title;
         }
     }
-}
+};
 loadContent('home');
+function toggleContent() {
+    const content = document.getElementById('content');
+    const background = document.getElementById('background-canvas');
+    const header = document.getElementById('dynamic-header');
+    const footer = document.getElementById('dynamic-footer');
+    if (content.style.display === 'none') {
+        content.style.display = '';
+        header.style.display = '';
+        footer.style.display = '';
+    } else {
+        content.style.display = 'none';
+        header.style.display = 'none';
+        footer.style.display = 'none';
+    }
+};
