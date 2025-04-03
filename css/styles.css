@@ -38,6 +38,15 @@ header nav a {
 header nav a:hover {
     color: #ffd700;
 }
+.content {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
 .content-image {
     position: relative;
 }
@@ -52,6 +61,13 @@ header nav a:hover {
     font-size: 14px;
     white-space: nowrap;
     border-radius: 4px;
+}
+footer {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
 }
 .switch {
     display: flex;
@@ -77,6 +93,22 @@ header nav a:hover {
     }
     50% {
         opacity: 0.0625;
+    }
+}
+@keyframes breathe1 {
+    0%, 100% {
+        opacity: 0.125;
+    }
+    50% {
+        opacity: 0.625;
+    }
+}
+@keyframes flash {
+    0%, 100% {
+        filter: invert(0);
+    }
+    50% {
+        filter: invert(1);
     }
 }
 #hypno-orb {
@@ -108,14 +140,6 @@ header nav a:hover {
     pointer-events: auto;
     animation: none;
 }
-@keyframes breathe1 {
-    0%, 100% {
-        opacity: 0.125;
-    }
-    50% {
-        opacity: 0.625;
-    }
-}
 #hypno-orb.hovered:hover {
     opacity: 0.7;
     visibility: visible;
@@ -133,14 +157,6 @@ header nav a:hover {
     opacity: 0.7;
     pointer-events: auto;
     visibility: visible;
-}
-@keyframes flash {
-    0%, 100% {
-        filter: invert(0);
-    }
-    50% {
-        filter: invert(1);
-    }
 }
 #flash-bar {
     opacity: 0.2;
@@ -178,19 +194,63 @@ header nav a:hover {
     animation: flash 0.125s infinite;
     z-index: 9999;
 }
-.content {
-    position: relative;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+#controls-container {
+    position: fixed;
+    bottom: 20px;
+    right: 90px;
+    display: flex;
+    align-items: out;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    border-radius: 0.2cm;
+    cursor: pointer;
+    overflow: hidden;
+    gap: 10px;
+    opacity: 0.6;
+    animation: breathe 12s infinite;
 }
-footer {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.85);
+#controls-container:hover {
+    opacity: 0.7;
+    pointer-events: auto;
+    visibility: visible;
+    cursor: pointer;
+    animation: none;
+}
+#controls-container.hovered {
+    opacity: 0;
+    pointer-events: auto;
+    animation: none;
+}
+#controls-container.hovered:hover {
+    opacity: 0.7;
+    visibility: visible;
+    cursor: pointer;
+    animation: breathe1 12s infinite;
+}
+.animation-button {
+    background-color: #0088ff;
     color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.6;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+.animation-button:hover {
+    background-color: #005bb5;
+    opacity: 0.7;
+    animation: none;
+}
+.animation-button.hovered {
+    opacity: 0;
+    pointer-events: none;
+    animation: none;
+}
+.animation-button.hovered:hover {
+    opacity: 0.7;
+    animation: breathe1 12s infinite;
 }
