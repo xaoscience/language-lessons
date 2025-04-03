@@ -89,9 +89,9 @@ const animations = [
             scene.add(torusKnot);
             return {
                 scene, camera, animate: () => {
-                    torusKnot.rotation.x += 0.01;
-                    torusKnot.rotation.y += 0.01;
-                    torusKnot.rotation.z += 0.005;
+                    torusKnot.rotation.x += 0.005;
+                    torusKnot.rotation.y += 0.005;
+                    torusKnot.rotation.z += 0.0025;
                 }
             };
         }
@@ -161,10 +161,11 @@ if (orbCanvas) {
         camera.updateProjectionMatrix();
         renderer.setSize(rect.width, rect.height);
     });
-    const hypnoOrb = document.getElementById("hypno-orb");
-    hypnoOrb.addEventListener("mouseleave", () => {
-        hypnoOrb.classList.add("hovered");
-    });
+    ["hypno-orb", "controls-container"].forEach(id =>
+        document.getElementById(id)?.addEventListener("mouseleave", () =>
+            document.getElementById(id)?.classList.add("hovered")
+        )
+    );
     let hypnoOn = true, hypnoOnN = -1;
     hypnoOrb.addEventListener("click", () => {
         let flashText;
