@@ -12,7 +12,7 @@ const content = {
                 Thank you for stopping by! I am a volunteer language teacher, currently teaching Dutch for the first time!
             </p>
             <p style="font-size:0.9em; color: gray;font-style: oblique;">
-                This website is currently hosted by Github Pages or locally, by downloading <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>
+                This website is currently hosted by Github Pages or locally, by downloading and extracting <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>
                 No cookies or scripts other than official JS, CSS and Three.js are used. 
             </p>
         `
