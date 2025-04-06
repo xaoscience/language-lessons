@@ -48,7 +48,7 @@ header nav a:hover {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
     border-radius: 0 0 8px 8px;
     margin-top: 30px;   /* Make room for language switcher */
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 .content-image {
     position: relative;
@@ -352,8 +352,10 @@ footer {
     opacity: 1;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 4px 4px 0 0;
+    box-shadow: 3px 0 3px -3px rgba(0,0,0,0.2),
+                0 -3px 3px -3px rgba(0,0,0,0.2),
+                -3px 0 3px -3px rgba(0,0,0,0.2);
 }
-
 .language-switch .fi {
     width: 24px;
     height: 16px;
