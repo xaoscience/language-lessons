@@ -99,7 +99,6 @@ class PageRenderer {
         if (existingContainer) {
             existingContainer.remove();
         }
-
         return `
             <div id="language-switcher-container">
                 ${Object.entries(LANGUAGES)
@@ -130,11 +129,9 @@ class PageRenderer {
             console.error(`No content found for page: ${page}`);
             return;
         }
-
         const title = TranslationManager.get(page, 'title');
         const description = TranslationManager.get(page, 'description');
         const body = content.body?.[currentLanguage] || '';
-
         document.getElementById('dynamic-header').innerHTML = `
             <h1>${title}</h1>
             <nav>${this.renderNavigation(page)}</nav>
