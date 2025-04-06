@@ -609,16 +609,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // loadContent('home');
 function toggleContent() {
     const content = document.getElementById('content');
-    const background = document.getElementById('background-canvas');
     const header = document.getElementById('dynamic-header');
     const footer = document.getElementById('dynamic-footer');
+    const languageSwitcher = document.getElementById('language-switcher-container');
     if (content.style.display === 'none') {
         content.style.display = '';
         header.style.display = '';
         footer.style.display = '';
+        languageSwitcher.style.display = '';
     } else {
         content.style.display = 'none';
         header.style.display = 'none';
         footer.style.display = 'none';
+        languageSwitcher.style.display = 'none';
     }
-};
+}
