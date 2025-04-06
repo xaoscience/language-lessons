@@ -6,14 +6,6 @@ const LANGUAGES = {
     DE: { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', flagStyle: 'fi fi-de'},
     IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it'},
 };
-const languages = LANGUAGES;
-const languageFlags = {
-    NL: 'nl',
-    EN: 'gb',
-    FR: 'fr',
-    DE: 'de',
-    IT: 'it'
-};
 const DEFAULT_LANGUAGE = 'EN';
 let currentLanguage = DEFAULT_LANGUAGE;
 class TranslationManager {
@@ -120,7 +112,6 @@ class PageRenderer {
                     `).join('')}
             </div>`;
     }
-
     static renderNavigation(page) {
         const content = ContentManager.getContent(page);
         const navigation = content?.navigation || ['home'];
@@ -133,7 +124,6 @@ class PageRenderer {
                 </a>
             `).join('');
     }
-
     static renderContent(page) {
         const content = ContentManager.getContent(page);
         if (!content) {
@@ -149,7 +139,6 @@ class PageRenderer {
             <h1>${title}</h1>
             <nav>${this.renderNavigation(page)}</nav>
         `;
-        
         document.getElementById('content').insertAdjacentHTML('beforebegin', this.renderLanguageSwitcher());
         document.getElementById('content').innerHTML = `
             <h2>${title}</h2>
@@ -193,7 +182,6 @@ TranslationManager.addTranslations('home', {
         description: 'Bedankt voor je bezoek! Ik ben een vrijwillige taalleraar, momenteel geef ik voor het eerst Nederlandse les!'
     }
 });
-
 ContentManager.addContent('dutch', {
     navigation: ['home', 'dutch', 'exercises'],
     sections: {
@@ -213,7 +201,6 @@ ContentManager.addContent('dutch', {
         }]
     }
 });
-
 ContentManager.addContent('dutch1', {
     navigation: ['home', 'dutch', 'exercises'],
     sections: {
@@ -322,7 +309,6 @@ TranslationManager.addTranslations('dutch1_2', {
         `
     }
 });
-
 TranslationManager.addTranslations('dutch1_3', {
     EN: {
         title: 'Grammatics',
@@ -353,7 +339,6 @@ TranslationManager.addTranslations('dutch1_3', {
         `
     }
 });
-
 TranslationManager.addTranslations('dutch1_1', {
     EN: {
         title: 'Origin and Etymology of Dutch',
@@ -364,11 +349,9 @@ TranslationManager.addTranslations('dutch1_1', {
         description: 'De historische ontwikkeling en taalkundige wortels van de Nederlandse taal.'
     }
 });
-
 ContentManager.addContent('exercises', {
     navigation: ['home', 'dutch'],
 });
-
 TranslationManager.addTranslations('exercises', {
     EN: {
         title: 'Exercises',
@@ -379,7 +362,6 @@ TranslationManager.addTranslations('exercises', {
         description: 'Test je kennis of speel.'
     }
 });
-
 document.addEventListener('DOMContentLoaded', () => {
     loadContent('home');
 });
