@@ -200,12 +200,34 @@ if (orbCanvas) {
         hypnoOn = !hypnoOn;
     });
 }
+
+// Accessibility functions
 function setContainerAlt() {
-    document.querySelector('.content-image').setAttribute('alt', document.querySelector('.content-image img').getAttribute('alt'));
-};
-const setOrbAlt = (() => {
+    document.querySelectorAll('.content-image').forEach(container => {
+        const img = container.querySelector('img');
+        if (img && img.alt) {
+            container.setAttribute('alt', img.alt);
+        }
+    });
+}
+
+function setOrbAlt() {
     const orb = document.querySelector('#hypno-orb');
     if (orb) {
         orb.setAttribute('aria-label', "A button to hide the content and show only the colourful background with a 3D wireframe of a large orb and larger torus, changing colours.");
     }
-})();
+}
+
+// Initialize accessibility features
+document.addEventListener('DOMContentLoaded', () => {
+    // Set up content image alt text observer
+    const observer = new MutationObserver(() => {
+        if (document.querySelectorAll('.content-image').length > 0) {
+            setContainerAlt();
+        }
+    });
+    observer.observe(document.getElementById('content'), { childList: true, subtree: true });
+
+    // Set orb alt text
+    setOrbAlt();
+});
