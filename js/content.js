@@ -3,11 +3,10 @@ const LANGUAGES = {
     EN: { name: 'English', nativeName: 'English', flag: '🇬🇧', flagStyle: 'fi fi-gb'},
     FR: { name: 'French', nativeName: 'Français', flag: '🇫🇷', flagStyle: 'fi fi-fr'},
     DE: { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', flagStyle: 'fi fi-de'},
-    IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it'},
+    IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it'}
 };
 const DEFAULT_LANGUAGE = 'EN';
 let currentLanguage = DEFAULT_LANGUAGE;
-
 try {
     const savedLanguage = localStorage.getItem('preferred-language');
     if (savedLanguage && LANGUAGES[savedLanguage]) {
@@ -16,7 +15,6 @@ try {
 } catch (e) {
     console.warn('LocalStorage not available:', e);
 }
-
 class TranslationManager {
     static translations = new Map();
     static addTranslations(namespace, translations) {
@@ -131,6 +129,16 @@ TranslationManager.addTranslations('dutch', {
         description: 'Corso interattivo di olandese per principianti e intermedi con esercizi.'
     }
 });
+ContentManager.addContent('home', {
+    navigation: ['home'],
+    body: {
+        EN: `<h2>Welcome!</h2><p>Thank you for stopping by! I am a volunteer language teacher, currently teaching Dutch for the first time!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">This website is currently hosted by Github Pages or locally, by downloading and extracting <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>No cookies or scripts other than official JS, CSS and Three.js are used.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Dutch Lessons</a></li></ul></div>`,
+        NL: `<h2>Welkom!</h2><p>Bedankt voor uw bezoek! Ik ben een vrijwillige taalleraar die momenteel voor het eerst Nederlands geeft!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Deze website wordt momenteel gehost op Github Pages of lokaal, door het downloaden en uitpakken van <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">deze map (download link)</a>.<br>Er worden geen cookies of scripts gebruikt behalve de officiële JS, CSS en Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Nederlandse Lessen</a></li></ul></div>`,
+        FR: `<h2>Bienvenue!</h2><p>Merci de votre visite ! Je suis un professeur de langues bénévole, et j'enseigne actuellement le néerlandais pour la première fois !</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Ce site web est actuellement hébergé sur Github Pages ou en local, en téléchargeant et en extrayant <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">ce dossier (lien de téléchargement)</a>.<br>Aucun cookie ni script autre que JS, CSS et Three.js officiels n'est utilisé.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Cours de Néerlandais</a></li></ul></div>`,
+        DE: `<h2>Willkommen!</h2><p>Danke für Ihren Besuch! Ich bin ein ehrenamtlicher Sprachlehrer und unterrichte derzeit zum ersten Mal Niederländisch!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Diese Website wird derzeit auf Github Pages oder lokal gehostet, durch Herunterladen und Entpacken von <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">diesem Ordner (Download-Link)</a>.<br>Es werden keine Cookies oder Skripte außer den offiziellen JS, CSS und Three.js verwendet.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Niederländisch Unterricht</a></li></ul></div>`,
+        IT: `<h2>Benvenuti!</h2><p>Grazie per la visita! Sono un insegnante di lingue volontario e attualmente insegno olandese per la prima volta!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Questo sito web è attualmente ospitato su Github Pages o in locale, scaricando ed estraendo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">questa cartella (link per il download)</a>.<br>Non vengono utilizzati cookie o script diversi da JS, CSS e Three.js ufficiali.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Lezioni di Olandese</a></li></ul></div>`
+    }
+});
 ContentManager.addContent('dutch', {
     navigation: ['home', 'dutch', 'exercises'],
     body: {
@@ -151,55 +159,30 @@ ContentManager.addContent('dutch1', {
         IT: `<h2>Lezione 1: Introduzione ed esercizi</h2><p class="description">Nella prima lezione, cerco di trasformare la mia passione per la lingua in un'introduzione approfondita alla lingua che trovo più noiosa - l'olandese. Qui, discuterò l'etimologia e l'origine e mostrerò la forma della lingua attraverso la storia e l'arte.</p><div class="content-links"><h3>Contenuti:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origine ed etimologia</a></li><li><a href="#" onclick="loadContent('dutch1_2')">La forma della lingua</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatica</a></li></ul></div>`
     }
 });
-ContentManager.addContent('dutch2', {
-    navigation: ['home', 'dutch', 'dutch1', 'exercises'],
-    body: {
-        EN: `<h2>Lesson 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
-        NL: `<h2>Les 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
-        FR: `<h2>Leçon 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
-        DE: `<h2>Lektion 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
-        IT: `<h2>Lezione 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`
-    }
-});
-ContentManager.addContent('home', {
-    navigation: ['home'],
-    body: {
-        EN: `<h2>Welcome!</h2><p>Thank you for stopping by! I am a volunteer language teacher, currently teaching Dutch for the first time!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">This website is currently hosted by Github Pages or locally, by downloading and extracting <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>No cookies or scripts other than official JS, CSS and Three.js are used.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Dutch Lessons</a></li></ul></div>`,
-        NL: `<h2>Welkom!</h2><p>Bedankt voor uw bezoek! Ik ben een vrijwillige taalleraar die momenteel voor het eerst Nederlands geeft!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Deze website wordt momenteel gehost op Github Pages of lokaal, door het downloaden en uitpakken van <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">deze map (download link)</a>.<br>Er worden geen cookies of scripts gebruikt behalve de officiële JS, CSS en Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Nederlandse Lessen</a></li></ul></div>`,
-        FR: `<h2>Bienvenue!</h2><p>Merci de votre visite ! Je suis un professeur de langues bénévole, et j'enseigne actuellement le néerlandais pour la première fois !</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Ce site web est actuellement hébergé sur Github Pages ou en local, en téléchargeant et en extrayant <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">ce dossier (lien de téléchargement)</a>.<br>Aucun cookie ni script autre que JS, CSS et Three.js officiels n'est utilisé.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Cours de Néerlandais</a></li></ul></div>`,
-        DE: `<h2>Willkommen!</h2><p>Danke für Ihren Besuch! Ich bin ein ehrenamtlicher Sprachlehrer und unterrichte derzeit zum ersten Mal Niederländisch!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Diese Website wird derzeit auf Github Pages oder lokal gehostet, durch Herunterladen und Entpacken von <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">diesem Ordner (Download-Link)</a>.<br>Es werden keine Cookies oder Skripte außer den offiziellen JS, CSS und Three.js verwendet.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Niederländisch Unterricht</a></li></ul></div>`,
-        IT: `<h2>Benvenuti!</h2><p>Grazie per la visita! Sono un insegnante di lingue volontario e attualmente insegno olandese per la prima volta!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Questo sito web è attualmente ospitato su Github Pages o in locale, scaricando ed estraendo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">questa cartella (link per il download)</a>.<br>Non vengono utilizzati cookie o script diversi da JS, CSS e Three.js ufficiali.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Lezioni di Olandese</a></li></ul></div>`
-    }
-});
 ContentManager.addContent('dutch1_1', {
     navigation: ['home', 'dutch1', 'exercises'],
     body: {
         EN: `<h2>Origin and etymology</h2>
-            <p>In the first lesson, I attempt to transform my passion for language into an expanded introduction to the language that is most boring to me - Dutch. Herein, I shall discuss the etymology and origin and display the form of the language through the aid of history and art.</p>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="A hierarchical tree diagram of the entire germanic branch.">
             </div>
             <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo European --> Proto-Germanic --> West Germanic --> West Low Franconian --> Dutch</p>`,
         NL: `<h2>Oorsprong en etymologie</h2>
-            <p>In de eerste les, tracht ik mijn passie voor taal om te zetten in een uitgebreide kennismaking met de taal die het meest saai voor mij is - Nederlands. Hierbij zal ik de etymologie en oorsprong bespreken en de vorm van de taal uitbeelden met behulp van (m.b.v) historiek en kunst.</p>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Een hiërarchische boomdiagram van de hele germaanse tak.">
             </div>
             <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europees --> Proto-Germaans --> West Germaans --> West Lagefrankisch --> Nederlands</p>`,
         FR: `<h2>Origine et étymologie</h2>
-            <p>Dans la première leçon, j'essaie de transformer ma passion pour la langue en une introduction approfondie à la langue qui m'ennuie le plus - le néerlandais. Ici, je discuterai de l'étymologie et de l'origine et présenterai la forme de la langue à travers l'histoire et l'art.</p>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Un diagramme arborescent hiérarchique de toute la branche germanique.">
             </div>
             <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Européen --> Proto-Germanique --> Germanique Occidental --> Bas-Francique Occidental --> Néerlandais</p>`,
         DE: `<h2>Ursprung und Etymologie</h2>
-            <p>In der ersten Lektion versuche ich, meine Sprachleidenschaft in eine erweiterte Einführung in die für mich langweiligste Sprache - Niederländisch - umzuwandeln. Hierin werde ich die Etymologie und den Ursprung besprechen und die Form der Sprache mithilfe von Geschichte und Kunst darstellen.</p>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Ein hierarchisches Baumdiagramm des gesamten germanischen Zweigs.">
             </div>
             <p style="font-weight: bold; font-size: 0.9em;">Proto-Indoeuropäisch --> Proto-Germanisch --> Westgermanisch --> Westfränkisch --> Niederländisch</p>`,
         IT: `<h2>Origine ed etimologia</h2>
-            <p>Nella prima lezione, cerco di trasformare la mia passione per la lingua in un'introduzione approfondita alla lingua che trovo più noiosa - l'olandese. Qui, discuterò l'etimologia e l'origine e mostrerò la forma della lingua attraverso la storia e l'arte.</p>
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Un diagramma ad albero gerarchico dell'intero ramo germanico.">
             </div>
@@ -341,6 +324,16 @@ ContentManager.addContent('dutch1_3', {
         </ul>`
     }
 });
+ContentManager.addContent('dutch2', {
+    navigation: ['home', 'dutch', 'dutch1', 'exercises'],
+    body: {
+        EN: `<h2>Lesson 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
+        NL: `<h2>Les 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
+        FR: `<h2>Leçon 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
+        DE: `<h2>Lektion 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
+        IT: `<h2>Lezione 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`
+    }
+});
 ContentManager.addContent('exercises', {
     navigation: ['home', 'dutch'],
     body: {
@@ -391,7 +384,6 @@ ContentManager.addContent('exercise1', {
         IT: `<h2>Pronuncia di Base</h2><p>Prossimamente...</p>`
     }
 });
-
 ContentManager.addContent('exercise2', {
     navigation: ['home', 'dutch', 'exercises'],
     body: {

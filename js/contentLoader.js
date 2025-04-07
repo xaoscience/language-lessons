@@ -5,13 +5,11 @@ class PageRenderer {
         if (existingContainer) existingContainer.remove();
         return `<div id="language-switcher-container">${Object.entries(LANGUAGES).map(([code, { nativeName, flagStyle }]) => `<button class="language-switch ${code === currentLanguage ? 'active' : ''}" onclick="switchLanguage('${code}')" aria-label="${nativeName}"><span class="${flagStyle}"></span></button>`).join('')}</div>`;
     }
-
     static getPageNavigationLinks(page) {
         const pageOrder = ['home', 'dutch', 'dutch1', 'dutch1_1', 'dutch1_2', 'dutch1_3', 'dutch2', 'exercises', 'exercise1', 'exercise2'];
         const currentIndex = pageOrder.indexOf(page);
         const prevPage = currentIndex > 0 ? pageOrder[currentIndex - 1] : null;
         const nextPage = currentIndex < pageOrder.length - 1 ? pageOrder[currentIndex + 1] : null;
-        
         let links = [];
         links.push(`<a href="#" onclick="loadContent('home')" class="nav-link">${TranslationManager.get('common', 'home')}</a>`);
         
@@ -26,11 +24,9 @@ class PageRenderer {
         }
         return links.join('');
     }
-
     static renderNavigation(page) {
         return this.getPageNavigationLinks(page);
     }
-
     static renderContent(page) {
         const content = ContentManager.getContent(page);
         if (!content) {
