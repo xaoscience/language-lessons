@@ -103,6 +103,8 @@ if (canvas) {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     let { scene, camera, animate } = animations[currentAnimationIndex].setup();
+    let isPaused = false;
+    let animationFrameId;
     function switchAnimation(direction) {
         if (direction === "next") {
             currentAnimationIndex = (currentAnimationIndex + 1) % animations.length;
@@ -112,9 +114,11 @@ if (canvas) {
         ({ scene, camera, animate } = animations[currentAnimationIndex].setup());
     }
     function render() {
-        requestAnimationFrame(render);
-        animate();
-        renderer.render(scene, camera);
+        if (!isPaused) {
+            animationFrameId = requestAnimationFrame(render);
+            animate();
+            renderer.render(scene, camera);
+        }
     }
     render();
     window.addEventListener('resize', () => {
@@ -128,6 +132,39 @@ if (canvas) {
     document.querySelector('#previous-button').addEventListener('click', () => {
         switchAnimation("previous");
     });
+    const pauseButton = document.querySelector('#pause-button');
+    if (pauseButton) {
+        let lastClick = 0;
+        let isHidden = false;
+        pauseButton.addEventListener('click', (e) => {
+            const currentTime = new Date().getTime();
+            const timeDiff = currentTime - lastClick;
+            if (timeDiff < 300) {
+                isHidden = !isHidden;
+                canvas.style.display = isHidden ? 'none' : 'block';
+                if (isHidden) {
+                    cancelAnimationFrame(animationFrameId);
+                } else {
+                    isPaused = false;
+                    pauseButton.classList.remove('paused');
+                    pauseButton.innerHTML = '&#10074;&#10074;';
+                    render();
+                }
+            } else {
+                if (!isHidden) {
+                    isPaused = !isPaused;
+                    pauseButton.classList.toggle('paused');
+                    pauseButton.innerHTML = isPaused ? '▶' : '&#10074;&#10074;';
+                    if (!isPaused) {
+                        render();
+                    } else {
+                        cancelAnimationFrame(animationFrameId);
+                    }
+                }
+            }
+            lastClick = currentTime;
+        });
+    }
 }
 const orbCanvas = document.getElementById("orb-canvas");
 if (orbCanvas) {
@@ -200,8 +237,6 @@ if (orbCanvas) {
         hypnoOn = !hypnoOn;
     });
 }
-
-// Accessibility functions
 function setContainerAlt() {
     document.querySelectorAll('.content-image').forEach(container => {
         const img = container.querySelector('img');
@@ -210,24 +245,18 @@ function setContainerAlt() {
         }
     });
 }
-
 function setOrbAlt() {
     const orb = document.querySelector('#hypno-orb');
     if (orb) {
         orb.setAttribute('aria-label', "A button to hide the content and show only the colourful background with a 3D wireframe of a large orb and larger torus, changing colours.");
     }
 }
-
-// Initialize accessibility features
 document.addEventListener('DOMContentLoaded', () => {
-    // Set up content image alt text observer
     const observer = new MutationObserver(() => {
         if (document.querySelectorAll('.content-image').length > 0) {
             setContainerAlt();
         }
     });
     observer.observe(document.getElementById('content'), { childList: true, subtree: true });
-
-    // Set orb alt text
     setOrbAlt();
 });
