@@ -8,15 +8,19 @@ const LANGUAGES = {
     SV: { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', flagStyle: 'fi fi-sv'}
 };
 const DEFAULT_LANGUAGE = 'EN';
-let currentLanguage = DEFAULT_LANGUAGE;
-try {
-    const savedLanguage = localStorage.getItem('preferred-language');
-    if (savedLanguage && LANGUAGES[savedLanguage]) {
-        currentLanguage = savedLanguage;
+const STORAGE_KEYS = {
+    currentLanguage: 'preferred-language',
+    previousLanguage: 'previous-language'
+};
+let currentLanguage = (() => {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEYS.currentLanguage);
+        return saved && LANGUAGES[saved] ? saved : DEFAULT_LANGUAGE;
+    } catch (e) {
+        console.warn('LocalStorage not available:', e);
+        return DEFAULT_LANGUAGE;
     }
-} catch (e) {
-    console.warn('LocalStorage not available:', e);
-}
+})();
 class TranslationManager {
     static translations = new Map();
     static addTranslations(namespace, translations) {
@@ -29,12 +33,22 @@ class TranslationManager {
     }
     static setLanguage(lang) {
         if (LANGUAGES[lang]) {
-            currentLanguage = lang;
             try {
-                localStorage.setItem('preferred-language', lang);
+                localStorage.setItem(STORAGE_KEYS.previousLanguage, currentLanguage);
+                localStorage.setItem(STORAGE_KEYS.currentLanguage, lang);
+                currentLanguage = lang;
             } catch (e) {
                 console.warn('LocalStorage not available:', e);
+                currentLanguage = lang;
             }
+        }
+    }
+    static getPreviousLanguage() {
+        try {
+            return localStorage.getItem(STORAGE_KEYS.previousLanguage) || DEFAULT_LANGUAGE;
+        } catch (e) {
+            console.warn('LocalStorage not available:', e);
+            return DEFAULT_LANGUAGE;
         }
     }
 }
