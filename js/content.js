@@ -564,6 +564,22 @@ ContentManager.addContent('exercise2', {
     }
 });
 
+const STATIC_PAGE_GROUPS = {
+    'lessons': {
+        title: 'Dutch Course - Lesson 1',
+        pages: ['dutch1', 'dutch1_1', 'dutch1_2', 'dutch1_3'],
+        staticFile: 'dutch-lesson1.html'
+    },
+    'exercises': {
+        title: 'Dutch Course - Exercises',
+        pages: ['exercise1', 'exercise2'],
+        staticFile: 'exercises.html'
+    }
+};
+
+// Make available globally since we're not using modules
+globalThis.STATIC_PAGE_GROUPS = STATIC_PAGE_GROUPS;
+
 globalThis.LANGUAGES = LANGUAGES;
 globalThis.DEFAULT_LANGUAGE = DEFAULT_LANGUAGE;
 globalThis.currentLanguage = currentLanguage;
