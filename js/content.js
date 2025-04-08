@@ -72,7 +72,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Nederlands',
         sections: 'Onderdelen',
         wip: 'Werk in Uitvoering',
-        start: 'Begin'
+        start: 'Begin',
+        language: 'Taal',
+        lessons: 'Lessen',
+        welcome: 'Welkom',
+        language_lessons: 'Taallessen',
+        dutch_lessons: 'Nederlandse Lessen'
     },
     EN: {
         lesson: 'Lesson',
@@ -84,7 +89,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Dutch',
         sections: 'Sections',
         wip: 'Work in Progress',
-        start: 'Start'
+        start: 'Start',
+        language: 'Language',
+        lessons: 'Lessons',
+        welcome: 'Welcome',
+        language_lessons: 'Language Lessons',
+        dutch_lessons: 'Dutch Lessons'
     },
     FR: {
         lesson: 'Leçon',
@@ -96,7 +106,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Néerlandais',
         sections: 'Sections',
         wip: 'Travail en cours',
-        start: 'Commencer'
+        start: 'Commencer',
+        language: 'Langue',
+        lessons: 'Leçons',
+        welcome: 'Bienvenue',
+        language_lessons: 'Leçons de Langue',
+        dutch_lessons: 'Leçons de Néerlandais'
     },
     DE: {
         lesson: 'Lektion',
@@ -108,7 +123,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Niederländisch',
         sections: 'Abschnitte',
         wip: 'In Bearbeitung',
-        start: 'Anfang'
+        start: 'Anfang',
+        language: 'Sprache',
+        lessons: 'Lektionen',
+        welcome: 'Willkommen',
+        language_lessons: 'Sprachlektionen',
+        dutch_lessons: 'Niederländischlektionen'
     },
     IT: {
         lesson: 'Lezione',
@@ -120,7 +140,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Olandese',
         sections: 'Sezioni',
         wip: 'Lavoro in corso',
-        start: 'Inizia'
+        start: 'Inizia',
+        language: 'Lingua',
+        lessons: 'Lezioni',
+        welcome: 'Benvenuti',
+        language_lessons: 'Lezioni di Lingua',
+        dutch_lessons: 'Lezioni di Olandese'
     },
     PT: {
         lesson: 'Lição',
@@ -132,7 +157,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Holandês',
         sections: 'Seções',
         wip: 'Trabalho em Andamento',
-        start: 'Começar'
+        start: 'Começar',
+        language: 'Idioma',
+        lessons: 'Lições',
+        welcome: 'Bem-vindo',
+        language_lessons: 'Lições de Idiomas',
+        dutch_lessons: 'Lições de Holandês'
     },
     SV: {
         lesson: 'Lektion',
@@ -144,7 +174,12 @@ TranslationManager.addTranslations('common', {
         dutch: 'Holländska',
         sections: 'Avsnitt',
         wip: 'Pågående Arbete',
-        start: 'Börja'
+        start: 'Börja',
+        language: 'Språk',
+        lessons: 'Lektioner',
+        welcome: 'Välkommen',
+        language_lessons: 'Språklektioner',
+        dutch_lessons: 'Holländskalektioner'
     }
 });
 TranslationManager.addTranslations('dutch', {

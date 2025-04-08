@@ -39,7 +39,7 @@ class PageRenderer {
             console.error(`No content found for page: ${page}`);
             return;
         }
-        const headerTitle = page.startsWith('dutch') ? 'Language Lessons > Dutch Lessons' : 'Language Lessons';
+        const headerTitle = page.startsWith('dutch') ? TranslationManager.get('common', 'dutch_lessons') : TranslationManager.get('common', 'language_lessons');
         document.getElementById('dynamic-header').innerHTML = `<h1>${headerTitle}</h1><nav>${this.renderNavigation(page)}</nav>`;
         document.getElementById('content').insertAdjacentHTML('beforebegin', this.renderLanguageSwitcher());
         document.getElementById('content').innerHTML = content.body[currentLanguage] || content.body[DEFAULT_LANGUAGE];
