@@ -3,7 +3,9 @@ const LANGUAGES = {
     EN: { name: 'English', nativeName: 'English', flag: '🇬🇧', flagStyle: 'fi fi-gb'},
     FR: { name: 'French', nativeName: 'Français', flag: '🇫🇷', flagStyle: 'fi fi-fr'},
     DE: { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', flagStyle: 'fi fi-de'},
-    IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it'}
+    IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it'},
+    PT: { name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹', flagStyle: 'fi fi-pt'},
+    SV: { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', flagStyle: 'fi fi-sv'}
 };
 const DEFAULT_LANGUAGE = 'EN';
 let currentLanguage = DEFAULT_LANGUAGE;
@@ -105,6 +107,30 @@ TranslationManager.addTranslations('common', {
         sections: 'Sezioni',
         wip: 'Lavoro in corso',
         start: 'Inizia'
+    },
+    PT: {
+        lesson: 'Lição',
+        chapter: 'Capítulo',
+        exercises: 'Exercícios',
+        home: 'Início',
+        back: 'Voltar',
+        next: 'Próximo',
+        dutch: 'Holandês',
+        sections: 'Seções',
+        wip: 'Trabalho em Andamento',
+        start: 'Começar'
+    },
+    SV: {
+        lesson: 'Lektion',
+        chapter: 'Kapitel',
+        exercises: 'Övningar',
+        home: 'Hem',
+        back: 'Tillbaka',
+        next: 'Nästa',
+        dutch: 'Holländska',
+        sections: 'Avsnitt',
+        wip: 'Pågående Arbete',
+        start: 'Börja'
     }
 });
 TranslationManager.addTranslations('dutch', {
@@ -127,6 +153,14 @@ TranslationManager.addTranslations('dutch', {
     IT: {
         title: 'Lezioni di Olandese',
         description: 'Corso interattivo di olandese per principianti e intermedi con esercizi.'
+    },
+    PT: {
+        title: 'Aulas de Holandês',
+        description: 'Curso interativo de holandês do nível iniciante ao intermediário com exercícios.'
+    },
+    SV: {
+        title: 'Holländskalektioner',
+        description: 'Interaktiv holländskakurs från nybörjare till medelnivå med övningar.'
     }
 });
 ContentManager.addContent('home', {
@@ -136,7 +170,9 @@ ContentManager.addContent('home', {
         NL: `<h2>Welkom!</h2><p>Bedankt voor uw bezoek! Ik ben een vrijwillige taalleraar die momenteel voor het eerst Nederlands geeft!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Deze website wordt momenteel gehost op Github Pages of lokaal, door het downloaden en uitpakken van <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">deze map (download link)</a>.<br>Er worden geen cookies of scripts gebruikt behalve de officiële JS, CSS en Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Nederlandse Lessen</a></li></ul></div>`,
         FR: `<h2>Bienvenue!</h2><p>Merci de votre visite ! Je suis un professeur de langues bénévole, et j'enseigne actuellement le néerlandais pour la première fois !</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Ce site web est actuellement hébergé sur Github Pages ou en local, en téléchargeant et en extrayant <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">ce dossier (lien de téléchargement)</a>.<br>Aucun cookie ni script autre que JS, CSS et Three.js officiels n'est utilisé.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Cours de Néerlandais</a></li></ul></div>`,
         DE: `<h2>Willkommen!</h2><p>Danke für Ihren Besuch! Ich bin ein ehrenamtlicher Sprachlehrer und unterrichte derzeit zum ersten Mal Niederländisch!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Diese Website wird derzeit auf Github Pages oder lokal gehostet, durch Herunterladen und Entpacken von <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">diesem Ordner (Download-Link)</a>.<br>Es werden keine Cookies oder Skripte außer den offiziellen JS, CSS und Three.js verwendet.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Niederländisch Unterricht</a></li></ul></div>`,
-        IT: `<h2>Benvenuti!</h2><p>Grazie per la visita! Sono un insegnante di lingue volontario e attualmente insegno olandese per la prima volta!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Questo sito web è attualmente ospitato su Github Pages o in locale, scaricando ed estraendo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">questa cartella (link per il download)</a>.<br>Non vengono utilizzati cookie o script diversi da JS, CSS e Three.js ufficiali.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Lezioni di Olandese</a></li></ul></div>`
+        IT: `<h2>Benvenuti!</h2><p>Grazie per la visita! Sono un insegnante di lingue volontario e attualmente insegno olandese per la prima volta!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Questo sito web è attualmente ospitato su Github Pages o in locale, scaricando ed estraendo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">questa cartella (link per il download)</a>.<br>Non vengono utilizzati cookie o script diversi da JS, CSS e Three.js ufficiali.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Lezioni di Olandese</a></li></ul></div>`,
+        PT: `<h2>Bem-vindo!</h2><p>Obrigado pela visita! Sou um professor voluntário de idiomas, atualmente ensinando holandês pela primeira vez!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Este site está atualmente hospedado no Github Pages ou localmente, baixando e extraindo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">esta pasta (link para download)</a>.<br>Nenhum cookie ou script além do JS, CSS e Three.js oficial é usado.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Aulas de Holandês</a></li></ul></div>`,
+        SV: `<h2>Välkommen!</h2><p>Tack för att du tittar in! Jag är en volontär språklärare som för första gången undervisar i holländska!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Denna webbplats är för närvarande värd på Github Pages eller lokalt, genom att ladda ner och extrahera <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">denna mapp (nedladdningslänk)</a>.<br>Inga cookies eller skript annat än officiell JS, CSS och Three.js används.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Holländskalektioner</a></li></ul></div>`
     }
 });
 ContentManager.addContent('dutch', {
@@ -146,7 +182,9 @@ ContentManager.addContent('dutch', {
         NL: `<h2>Nederlandse Lessen</h2><p>Interactieve, beginner tot intermediaire Nederlands klas met oefeningen.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Les 1: Introductie en oefeningen</a></li><li><a href="#" onclick="loadContent('dutch2')">Les 2: Werk in Uitvoering</a></li></ul></div>`,
         FR: `<h2>Cours de Néerlandais</h2><p>Cours interactif de néerlandais pour débutants à intermédiaires avec exercices.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Leçon 1: Introduction et exercices</a></li><li><a href="#" onclick="loadContent('dutch2')">Leçon 2: Travail en cours</a></li></ul></div>`,
         DE: `<h2>Niederländisch Unterricht</h2><p>Interaktiver Niederländischkurs für Anfänger bis Fortgeschrittene mit Übungen.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Lektion 1: Einführung und Übungen</a></li><li><a href="#" onclick="loadContent('dutch2')">Lektion 2: In Bearbeitung</a></li></ul></div>`,
-        IT: `<h2>Lezioni di Olandese</h2><p>Corso interattivo di olandese per principianti e intermedi con esercizi.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Lezione 1: Introduzione ed esercizi</a></li><li><a href="#" onclick="loadContent('dutch2')">Lezione 2: Lavoro in corso</a></li></ul></div>`
+        IT: `<h2>Lezioni di Olandese</h2><p>Corso interattivo di olandese per principianti e intermedi con esercizi.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Lezione 1: Introduzione ed esercizi</a></li><li><a href="#" onclick="loadContent('dutch2')">Lezione 2: Lavoro in corso</a></li></ul></div>`,
+        PT: `<h2>Aulas de Holandês</h2><p>Curso interativo de holandês do nível iniciante ao intermediário com exercícios.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Lição 1: Introdução e exercícios</a></li><li><a href="#" onclick="loadContent('dutch2')">Lição 2: Trabalho em Andamento</a></li></ul></div>`,
+        SV: `<h2>Holländskalektioner</h2><p>Interaktiv holländskakurs från nybörjare till medelnivå med övningar.</p><div class="content-links"><ul><li><a href="#" onclick="loadContent('dutch1')">Lektion 1: Introduktion och övningar</a></li><li><a href="#" onclick="loadContent('dutch2')">Lektion 2: Pågående Arbete</a></li></ul></div>`
     }
 });
 ContentManager.addContent('dutch1', {
@@ -156,7 +194,9 @@ ContentManager.addContent('dutch1', {
         NL: `<h2>Les 1: Introductie en oefeningen</h2><p class="description">In de eerste les, tracht ik mijn passie voor taal om te zetten in een uitgebreide kennismaking met de taal die het meest saai voor mij is - Nederlands. Hierbij zal ik de etymologie en oorsprong bespreken en de vorm van de taal uitbeelden met behulp van (m.b.v) historiek en kunst.</p><div class="content-links"><h3>Inhoud:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Oorsprong en etymologie</a></li><li><a href="#" onclick="loadContent('dutch1_2')">De vorm van de taal</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatica</a></li></ul></div>`,
         FR: `<h2>Leçon 1: Introduction et exercices</h2><p class="description">Dans la première leçon, j'essaie de transformer ma passion pour la langue en une introduction approfondie à la langue qui m'ennuie le plus - le néerlandais. Ici, je discuterai de l'étymologie et de l'origine et présenterai la forme de la langue à travers l'histoire et l'art.</p><div class="content-links"><h3>Contenu:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origine et étymologie</a></li><li><a href="#" onclick="loadContent('dutch1_2')">La forme de la langue</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammaire</a></li></ul></div>`,
         DE: `<h2>Lektion 1: Einführung und Übungen</h2><p class="description">In der ersten Lektion versuche ich, meine Sprachleidenschaft in eine erweiterte Einführung in die für mich langweiligste Sprache - Niederländisch - umzuwandeln. Hierin werde ich die Etymologie und den Ursprung besprechen und die Form der Sprache mithilfe von Geschichte und Kunst darstellen.</p><div class="content-links"><h3>Inhalt:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Ursprung und Etymologie</a></li><li><a href="#" onclick="loadContent('dutch1_2')">Die Form der Sprache</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatik</a></li></ul></div>`,
-        IT: `<h2>Lezione 1: Introduzione ed esercizi</h2><p class="description">Nella prima lezione, cerco di trasformare la mia passione per la lingua in un'introduzione approfondita alla lingua che trovo più noiosa - l'olandese. Qui, discuterò l'etimologia e l'origine e mostrerò la forma della lingua attraverso la storia e l'arte.</p><div class="content-links"><h3>Contenuti:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origine ed etimologia</a></li><li><a href="#" onclick="loadContent('dutch1_2')">La forma della lingua</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatica</a></li></ul></div>`
+        IT: `<h2>Lezione 1: Introduzione ed esercizi</h2><p class="description">Nella prima lezione, cerco di trasformare la mia passione per la lingua in un'introduzione approfondita alla lingua che trovo più noiosa - l'olandese. Qui, discuterò l'etimologia e l'origine e mostrerò la forma della lingua attraverso la storia e l'arte.</p><div class="content-links"><h3>Contenuti:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origine ed etimologia</a></li><li><a href="#" onclick="loadContent('dutch1_2')">La forma della lingua</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatica</a></li></ul></div>`,
+        PT: `<h2>Lição 1: Introdução e exercícios</h2><p class="description">Na primeira lição, tento transformar minha paixão pela língua em uma introdução expandida à língua que considero mais chata - o holandês. Aqui, discutirei a etimologia e origem e demonstrarei a forma da língua através da história e da arte.</p><div class="content-links"><h3>Conteúdo:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origem e etimologia</a></li><li><a href="#" onclick="loadContent('dutch1_2')">A forma da língua</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Gramática</a></li></ul></div>`,
+        SV: `<h2>Lektion 1: Introduktion och övningar</h2><p class="description">I den första lektionen försöker jag omvandla min passion för språk till en utökad introduktion till det språk som jag tycker är tråkigast - holländska. Här kommer jag att diskutera etymologin och ursprunget samt visa språkets form genom historia och konst.</p><div class="content-links"><h3>Innehåll:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Ursprung och etymologi</a></li><li><a href="#" onclick="loadContent('dutch1_2')">Språkets form</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatik</a></li></ul></div>`
     }
 });
 ContentManager.addContent('dutch1_1', {
@@ -186,7 +226,17 @@ ContentManager.addContent('dutch1_1', {
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Un diagramma ad albero gerarchico dell'intero ramo germanico.">
             </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europeo --> Proto-Germanico --> Germanico Occidentale --> Basso Francone Occidentale --> Olandese</p>`
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europeo --> Proto-Germanico --> Germanico Occidentale --> Basso Francone Occidentale --> Olandese</p>`,
+        PT: `<h2>Origem e etimologia</h2>
+            <div class="content-image">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Um diagrama em árvore hierárquica de todo o ramo germânico.">
+            </div>
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europeu --> Proto-Germânico --> Germânico Ocidental --> Baixo-Francônio Ocidental --> Holandês</p>`,
+        SV: `<h2>Ursprung och etymologi</h2>
+            <div class="content-image">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Ett hierarkiskt träddiagram över hela den germanska grenen.">
+            </div>
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo-Europeiska --> Proto-Germanska --> Västgermanska --> Västlågfrankiska --> Holländska</p>`
     }
 });
 ContentManager.addContent('dutch1_2', {
@@ -256,6 +306,32 @@ ContentManager.addContent('dutch1_2', {
             <li>aa, ee, oo - Vocali lunghe</li>
             <li>g/ch - Suoni gutturali</li>
             <li>ui, eu, oe - Suoni unici dell'olandese</li>
+        </ul>`,
+        PT: `<h2>A Forma da Língua</h2>
+        <p>O holandês usa o alfabeto latino com 26 letras. Combinações especiais incluem:</p>
+        <ul>
+            <li>ij - Frequentemente tratado como uma única letra</li>
+            <li>ch - Som gutural</li>
+            <li>sch - Combinação comum</li>
+        </ul>
+        <p>Regras de pronúncia:</p>
+        <ul>
+            <li>aa, ee, oo - Vogais longas</li>
+            <li>g/ch - Sons guturais</li>
+            <li>ui, eu, oe - Sons únicos do holandês</li>
+        </ul>`,
+        SV: `<h2>Språkets Form</h2>
+        <p>Holländska använder det latinska alfabetet med 26 bokstäver. Speciella kombinationer inkluderar:</p>
+        <ul>
+            <li>ij - Ofta behandlad som en enda bokstav</li>
+            <li>ch - Gutturalt ljud</li>
+            <li>sch - Vanlig kombination</li>
+        </ul>
+        <p>Uttalsregler:</p>
+        <ul>
+            <li>aa, ee, oo - Långa vokaler</li>
+            <li>g/ch - Gutturala ljud</li>
+            <li>ui, eu, oe - Unika holländska ljud</li>
         </ul>`
     }
 });
@@ -321,6 +397,30 @@ ContentManager.addContent('dutch1_3', {
         <ul>
             <li>zijn (essere): ik ben, jij bent, hij/zij/het is</li>
             <li>hebben (avere): ik ho, jij hebt, hij/zij/het ha</li>
+        </ul>`,
+        PT: `<h2>Gramática Básica</h2>
+        <p>A gramática holandesa compartilha características com o inglês e o alemão:</p>
+        <ul>
+            <li>Ordem das palavras: Sujeito-Verbo-Objeto (em orações principais)</li>
+            <li>Dois gêneros gramaticais: Comum e neutro</li>
+            <li>Artigos: 'de' (comum) e 'het' (neutro)</li>
+        </ul>
+        <p>Exemplos de conjugação verbal:</p>
+        <ul>
+            <li>zijn (ser/estar): ik ben, jij bent, hij/zij/het is</li>
+            <li>hebben (ter): ik heb, jij hebt, hij/zij/het heeft</li>
+        </ul>`,
+        SV: `<h2>Grundläggande Grammatik</h2>
+        <p>Holländsk grammatik delar egenskaper med både engelska och tyska:</p>
+        <ul>
+            <li>Ordföljd: Subjekt-Verb-Objekt (i huvudsatser)</li>
+            <li>Två grammatiska genus: Utrum och neutrum</li>
+            <li>Artiklar: 'de' (utrum) och 'het' (neutrum)</li>
+        </ul>
+        <p>Exempel på verbböjning:</p>
+        <ul>
+            <li>zijn (vara): ik ben, jij bent, hij/zij/het is</li>
+            <li>hebben (ha): ik heb, jij hebt, hij/zij/het heeft</li>
         </ul>`
     }
 });
@@ -331,7 +431,9 @@ ContentManager.addContent('dutch2', {
         NL: `<h2>Les 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
         FR: `<h2>Leçon 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
         DE: `<h2>Lektion 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
-        IT: `<h2>Lezione 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`
+        IT: `<h2>Lezione 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
+        PT: `<h2>Lição 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`,
+        SV: `<h2>Lektion 2</h2><p class="description">${TranslationManager.get('common', 'wip')}</p>`
     }
 });
 ContentManager.addContent('exercises', {
@@ -371,6 +473,20 @@ ContentManager.addContent('exercises', {
                     <li><a href="#" onclick="loadContent('exercise1')">Esercizio 1: Pronuncia di Base</a></li>
                     <li><a href="#" onclick="loadContent('exercise2')">Esercizio 2: Frasi Comuni</a></li>
                 </ul>
+            </div>`,
+        PT: `<h2>Exercícios</h2><p>Teste seu conhecimento ou pratique.</p>
+            <div class="content-links">
+                <ul>
+                    <li><a href="#" onclick="loadContent('exercise1')">Exercício 1: Pronúncia Básica</a></li>
+                    <li><a href="#" onclick="loadContent('exercise2')">Exercício 2: Frases Comuns</a></li>
+                </ul>
+            </div>`,
+        SV: `<h2>Övningar</h2><p>Testa dina kunskaper eller öva.</p>
+            <div class="content-links">
+                <ul>
+                    <li><a href="#" onclick="loadContent('exercise1')">Övning 1: Grundläggande Uttal</a></li>
+                    <li><a href="#" onclick="loadContent('exercise2')">Övning 2: Vanliga Fraser</a></li>
+                </ul>
             </div>`
     }
 });
@@ -381,7 +497,9 @@ ContentManager.addContent('exercise1', {
         NL: `<h2>Basis Uitspraak</h2><p>Binnenkort beschikbaar...</p>`,
         FR: `<h2>Prononciation de Base</h2><p>Bientôt disponible...</p>`,
         DE: `<h2>Grundlegende Aussprache</h2><p>Demnächst verfügbar...</p>`,
-        IT: `<h2>Pronuncia di Base</h2><p>Prossimamente...</p>`
+        IT: `<h2>Pronuncia di Base</h2><p>Prossimamente...</p>`,
+        PT: `<h2>Pronúncia Básica</h2><p>Em breve...</p>`,
+        SV: `<h2>Grundläggande Uttal</h2><p>Kommer snart...</p>`
     }
 });
 ContentManager.addContent('exercise2', {
@@ -391,7 +509,9 @@ ContentManager.addContent('exercise2', {
         NL: `<h2>Veelgebruikte Zinnen</h2><p>Binnenkort beschikbaar...</p>`,
         FR: `<h2>Phrases Courantes</h2><p>Bientôt disponible...</p>`,
         DE: `<h2>Häufige Sätze</h2><p>Demnächst verfügbar...</p>`,
-        IT: `<h2>Frasi Comuni</h2><p>Prossimamente...</p>`
+        IT: `<h2>Frasi Comuni</h2><p>Prossimamente...</p>`,
+        PT: `<h2>Frases Comuns</h2><p>Em breve...</p>`,
+        SV: `<h2>Vanliga Fraser</h2><p>Kommer snart...</p>`
     }
 });
 export { LANGUAGES, DEFAULT_LANGUAGE, currentLanguage, TranslationManager, ContentManager };

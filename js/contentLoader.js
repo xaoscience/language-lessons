@@ -3,7 +3,13 @@ class PageRenderer {
     static renderLanguageSwitcher() {
         const existingContainer = document.getElementById('language-switcher-container');
         if (existingContainer) existingContainer.remove();
-        return `<div id="language-switcher-container">${Object.entries(LANGUAGES).map(([code, { nativeName, flagStyle }]) => `<button class="language-switch ${code === currentLanguage ? 'active' : ''}" onclick="switchLanguage('${code}')" aria-label="${nativeName}"><span class="${flagStyle}"></span></button>`).join('')}</div>`;
+        const quickSwitchButton = `<button class="language-switch" onclick="quickSwitchLanguage()" aria-label="Quick switch language"><span>⇄</span></button>`;
+        return `<div id="language-switcher-container">
+            ${Object.entries(LANGUAGES).map(([code, { nativeName, flagStyle }]) => 
+                `<button class="language-switch ${code === currentLanguage ? 'active' : ''}" onclick="switchLanguage('${code}')" aria-label="${nativeName}"><span class="${flagStyle}"></span></button>`
+            ).join('')}
+            ${quickSwitchButton}
+        </div>`;
     }
     static getPageNavigationLinks(page) {
         const pageOrder = ['home', 'dutch', 'dutch1', 'dutch1_1', 'dutch1_2', 'dutch1_3', 'dutch2', 'exercises', 'exercise1', 'exercise2'];
@@ -33,7 +39,8 @@ class PageRenderer {
             console.error(`No content found for page: ${page}`);
             return;
         }
-        document.getElementById('dynamic-header').innerHTML = `<h1>${TranslationManager.get(page, 'title')}</h1><nav>${this.renderNavigation(page)}</nav>`;
+        const headerTitle = page.startsWith('dutch') ? 'Language Lessons > Dutch Lessons' : 'Language Lessons';
+        document.getElementById('dynamic-header').innerHTML = `<h1>${headerTitle}</h1><nav>${this.renderNavigation(page)}</nav>`;
         document.getElementById('content').insertAdjacentHTML('beforebegin', this.renderLanguageSwitcher());
         document.getElementById('content').innerHTML = content.body[currentLanguage] || content.body[DEFAULT_LANGUAGE];
     }
@@ -43,6 +50,11 @@ function switchLanguage(newLanguage) {
         TranslationManager.setLanguage(newLanguage);
         PageRenderer.renderContent(window.currentPage);
     }
+}
+function quickSwitchLanguage() {
+    const previousLanguage = localStorage.getItem('previous-language') || 'EN';
+    localStorage.setItem('previous-language', currentLanguage);
+    switchLanguage(currentLanguage === 'NL' ? previousLanguage : 'NL');
 }
 function loadContent(page) {
     window.currentPage = page;
@@ -55,5 +67,6 @@ function toggleContent() {
 }
 globalThis.loadContent = loadContent;
 globalThis.switchLanguage = switchLanguage;
+globalThis.quickSwitchLanguage = quickSwitchLanguage;
 globalThis.toggleContent = toggleContent;
 document.addEventListener('DOMContentLoaded', () => loadContent('home'));
