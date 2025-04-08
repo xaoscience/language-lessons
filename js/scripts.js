@@ -260,3 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(document.getElementById('content'), { childList: true, subtree: true });
     setOrbAlt();
 });
+function checkForDynamicRedirect() {
+    const isStatic = window.location.pathname.includes('/static/');
+    if (isStatic && 'requestAnimationFrame' in window) {
+        const page = window.location.pathname.split('/').pop().replace('.html', '');
+        window.location.href = '../index.html' + (page !== 'index' ? '#' + page : '');
+    }
+}
+window.addEventListener('load', checkForDynamicRedirect);

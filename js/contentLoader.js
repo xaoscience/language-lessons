@@ -1,5 +1,27 @@
-// Remove import statement and use global variables
+// Content loading and rendering
 class PageRenderer {
+    static pageGroups = {
+        'dutch-lessons': ['dutch1', 'dutch1_1', 'dutch1_2', 'dutch1_3'],
+        'exercises': ['exercises', 'exercise1', 'exercise2']
+    };
+
+    static getStaticPath(page) {
+        if (page === 'home') return 'static/home.html';
+        for (const [group, pages] of Object.entries(this.pageGroups)) {
+            if (pages.includes(page)) {
+                return `static/${group}.html`;
+            }
+        }
+        return `static/${page}.html`;
+    }
+
+    static convertDynamicToStaticLinks(content) {
+        return content.replace(/onclick="loadContent\('([^']+)'\)"/g, (match, page) => {
+            const staticPath = this.getStaticPath(page);
+            return `href="${staticPath}"`;
+        });
+    }
+
     static renderLanguageSwitcher() {
         const existingContainer = document.getElementById('language-switcher-container');
         if (existingContainer) existingContainer.remove();
@@ -11,6 +33,7 @@ class PageRenderer {
             ${quickSwitchButton}
         </div>`;
     }
+
     static getPageNavigationLinks(page) {
         const pageOrder = ['home', 'dutch', 'dutch1', 'dutch1_1', 'dutch1_2', 'dutch1_3', 'dutch2', 'exercises', 'exercise1', 'exercise2'];
         const currentIndex = pageOrder.indexOf(page);
@@ -30,43 +53,58 @@ class PageRenderer {
         }
         return links.join('');
     }
+
     static renderNavigation(page) {
         return this.getPageNavigationLinks(page);
     }
+
     static renderContent(page) {
         const content = ContentManager.getContent(page);
         if (!content) {
             console.error(`No content found for page: ${page}`);
             return;
         }
-        const headerTitle = page.startsWith('dutch') ? TranslationManager.get('common', 'dutch_lessons') : TranslationManager.get('common', 'language_lessons');
-        document.getElementById('dynamic-header').innerHTML = `<h1>${headerTitle}</h1><nav>${this.renderNavigation(page)}</nav>`;
+        
+        const headerTitle = page.startsWith('dutch') ? 
+            TranslationManager.get('common', 'dutch_lessons') : 
+            TranslationManager.get('common', 'language_lessons');
+        
+        document.getElementById('dynamic-header').innerHTML = 
+            `<h1>${headerTitle}</h1><nav>${this.renderNavigation(page)}</nav>`;
         document.getElementById('content').insertAdjacentHTML('beforebegin', this.renderLanguageSwitcher());
         document.getElementById('content').innerHTML = content.body[currentLanguage] || content.body[DEFAULT_LANGUAGE];
+        
+        history.pushState({ page }, '', `#${page}`);
     }
 }
+
 function switchLanguage(newLanguage) {
     if (LANGUAGES[newLanguage]) {
         TranslationManager.setLanguage(newLanguage);
         PageRenderer.renderContent(window.currentPage);
     }
 }
+
 function quickSwitchLanguage() {
     const previousLanguage = localStorage.getItem('previous-language') || 'EN';
     localStorage.setItem('previous-language', currentLanguage);
     switchLanguage(currentLanguage === 'NL' ? previousLanguage : 'NL');
 }
+
 function loadContent(page) {
     window.currentPage = page;
     PageRenderer.renderContent(page);
 }
+
 function toggleContent() {
     const elements = ['content', 'dynamic-header', 'dynamic-footer', 'language-switcher-container'].map(id => document.getElementById(id));
     const isHidden = elements[0].style.display === 'none';
     elements.forEach(el => { if (el) el.style.display = isHidden ? '' : 'none'; });
 }
+
 globalThis.loadContent = loadContent;
 globalThis.switchLanguage = switchLanguage;
 globalThis.quickSwitchLanguage = quickSwitchLanguage;
 globalThis.toggleContent = toggleContent;
+
 document.addEventListener('DOMContentLoaded', () => loadContent('home'));
