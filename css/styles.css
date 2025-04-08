@@ -19,9 +19,10 @@ header {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 20px;
+    padding: 20px 20px 0;
     background: rgba(0, 0, 0, 0.85);
     color: #fff;
+    margin-bottom: 40px;
 }
 header nav {
     display: flex;
@@ -40,12 +41,13 @@ header nav a:hover {
 }
 .content {
     position: relative;
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin: 0 auto;
     padding: 40px;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px;
+    margin-top: 30px;
 }
 .content-image {
     position: relative;
@@ -74,6 +76,18 @@ footer {
     padding: 0;
     cursor: pointer;
     color: inherit;
+}
+#EN_NL_switch {
+    position: relative;
+    border: none;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
 }
 @keyframes breathe {
     0%, 100% {
@@ -227,6 +241,12 @@ footer {
     border-radius: 5px;
     opacity: 0.6;
     transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-family: monospace;
 }
 .animation-button:hover {
     background-color: #005bb5;
@@ -242,22 +262,112 @@ footer {
     opacity: 0.7;
     animation: breathe1 12s infinite;
 }
-
-/* Static page styles */
-.lesson-section {
-    margin: 2em 0;
-    padding-top: 1em;
-    border-top: 1px solid rgba(23, 66, 53, 0.2);
+.animation-button.paused {
+    background-color: #442a0d;
 }
-
-.lesson-section:first-child {
-    border-top: none;
-    padding-top: 0;
+.language-switcher {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    display: flex;
+    gap: 0;
+    z-index: 1;
 }
-
-.static-notice {
-    background: #ffe0b2;
-    padding: 10px;
+.language-button {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #f8f8f8;
+    padding: 2px 8px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 4px 4px 0 0;
+}
+.language-button:hover {
+    background: #fff;
+}
+.language-button.active {
+    background: #fff;
+    position: relative;
+}
+.language-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #fff;
+}
+.content-links {
     margin: 20px 0;
+}
+
+.content-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-links li {
+    margin: 10px 0;
+}
+
+.content-links a {
+    color: #174235;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+
+.content-links a:hover {
+    color: #442a0d;
+}
+
+.nav-link {
+    padding: 5px 15px;
+    color: #fff;
+    text-decoration: none;
     border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.language-switch {
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    font-size: 16px;
+    color: white;
+}
+.language-switch:hover {
+    opacity: 1;
+}
+.language-switch.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px 4px 0 0;
+    box-shadow: 3px 0 3px -3px rgba(0,0,0,0.2),
+                0 -3px 3px -3px rgba(0,0,0,0.2),
+                -3px 0 3px -3px rgba(0,0,0,0.2);
+}
+.language-switch .fi {
+    width: 24px;
+    height: 16px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+#language-switcher-container {
+    position: relative;
+    top: +30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 4px;
+    padding: 0 20px;
 }
