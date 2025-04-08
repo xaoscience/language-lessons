@@ -563,4 +563,9 @@ ContentManager.addContent('exercise2', {
         SV: `<h2>Vanliga Fraser</h2><p>Kommer snart...</p>`
     }
 });
-export { LANGUAGES, DEFAULT_LANGUAGE, currentLanguage, TranslationManager, ContentManager };
+
+globalThis.LANGUAGES = LANGUAGES;
+globalThis.DEFAULT_LANGUAGE = DEFAULT_LANGUAGE;
+globalThis.currentLanguage = currentLanguage;
+globalThis.TranslationManager = TranslationManager;
+globalThis.ContentManager = ContentManager;

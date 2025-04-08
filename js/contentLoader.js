@@ -1,4 +1,4 @@
-import { LANGUAGES, currentLanguage, TranslationManager, ContentManager } from './content.js';
+// Remove import statement and use global variables
 class PageRenderer {
     static renderLanguageSwitcher() {
         const existingContainer = document.getElementById('language-switcher-container');
