@@ -60,6 +60,11 @@ class ContentManager {
     static getContent(pageId) {
         return this.content.get(pageId);
     }
+    static getStaticContent(pageId) {
+        const content = this.getContent(pageId);
+        if (!content) return null;
+        return convertToStaticLinks(content.body[DEFAULT_LANGUAGE]);
+    }
 }
 TranslationManager.addTranslations('common', {
     NL: {
@@ -585,3 +590,13 @@ globalThis.DEFAULT_LANGUAGE = DEFAULT_LANGUAGE;
 globalThis.currentLanguage = currentLanguage;
 globalThis.TranslationManager = TranslationManager;
 globalThis.ContentManager = ContentManager;
+
+function convertToStaticLinks(content) {
+    return content.replace(
+        /onclick="loadContent\('([^']+)'\)"/g,
+        'href="$1.html"'
+    );
+}
+
+// Make available globally
+globalThis.convertToStaticLinks = convertToStaticLinks;

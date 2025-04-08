@@ -12,8 +12,13 @@
     <meta name="author" content="χαος">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="data/flagicons/css/flag-icons.css">
-    <noscript><meta http-equiv="refresh" content="0; url=static/home.html"></noscript>
-    <noscript><meta http-equiv="refresh" content="0; url=noscript.html"></noscript>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=static/home.html">
+        <style>
+            body { background: linear-gradient(to bottom, #174235, #442a0d); }
+            #background-canvas, .animation-button, #hypno-orb, #controls-container { display: none; }
+        </style>
+    </noscript>
 </head>
 <body>
     <canvas id="background-canvas"></canvas>
