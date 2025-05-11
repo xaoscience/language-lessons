@@ -1,11 +1,11 @@
 const LANGUAGES = {
-    NL: { name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱', flagStyle: 'fi fi-nl'},
-    EN: { name: 'English', nativeName: 'English', flag: '🇬🇧', flagStyle: 'fi fi-gb'},
-    FR: { name: 'French', nativeName: 'Français', flag: '🇫🇷', flagStyle: 'fi fi-fr'},
-    DE: { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', flagStyle: 'fi fi-de'},
-    IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it'},
-    PT: { name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹', flagStyle: 'fi fi-pt'},
-    SV: { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', flagStyle: 'fi fi-sv'}
+    NL: { name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱', flagStyle: 'fi fi-nl' },
+    EN: { name: 'English', nativeName: 'English', flag: '🇬🇧', flagStyle: 'fi fi-gb' },
+    FR: { name: 'French', nativeName: 'Français', flag: '🇫🇷', flagStyle: 'fi fi-fr' },
+    DE: { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', flagStyle: 'fi fi-de' },
+    IT: { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', flagStyle: 'fi fi-it' },
+    PT: { name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹', flagStyle: 'fi fi-pt' },
+    SV: { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', flagStyle: 'fi fi-sv' }
 };
 const DEFAULT_LANGUAGE = 'EN';
 const STORAGE_KEYS = {
@@ -220,13 +220,13 @@ TranslationManager.addTranslations('dutch', {
 ContentManager.addContent('home', {
     navigation: ['home'],
     body: {
-        EN: `<h2>Welcome!</h2><p>Thank you for stopping by! I am a volunteer language teacher, currently teaching Dutch for the first time!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">This website is currently hosted by Github Pages or locally, by downloading and extracting <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>No cookies or scripts are used except for language preferences, official JS, CSS and Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Dutch Lessons</a></li></ul></div>`,
-        NL: `<h2>Welkom!</h2><p>Bedankt voor uw bezoek! Ik ben een vrijwillige taalleraar die momenteel voor het eerst Nederlands geeft!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Deze website wordt momenteel gehost op Github Pages of lokaal, door het downloaden en uitpakken van <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">deze map (download link)</a>.<br>Er worden geen cookies of scripts gebruikt behalve taalvoorkeur, de officiële JS, CSS en Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Nederlandse Lessen</a></li></ul></div>`,
-        FR: `<h2>Bienvenue!</h2><p>Merci de votre visite ! Je suis un professeur de langues bénévole, et j'enseigne actuellement le néerlandais pour la première fois !</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Ce site web est actuellement hébergé sur Github Pages ou en local, en téléchargeant et en extrayant <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">ce dossier (lien de téléchargement)</a>.<br>Aucun cookie ou script n'est utilisé à l'exception des préférences linguistiques, JS, CSS et Three.js officiels.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Cours de Néerlandais</a></li></ul></div>`,
-        DE: `<h2>Willkommen!</h2><p>Danke für Ihren Besuch! Ich bin ein ehrenamtlicher Sprachlehrer und unterrichte derzeit zum ersten Mal Niederländisch!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Diese Website wird derzeit auf Github Pages oder lokal gehostet, durch Herunterladen und Entpacken von <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">diesem Ordner (Download-Link)</a>.<br>Es werden keine Cookies oder Skripte außer Spracheinstellungen, offiziellen JS, CSS und Three.js verwendet.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Niederländisch Unterricht</a></li></ul></div>`,
-        IT: `<h2>Benvenuti!</h2><p>Grazie per la visita! Sono un insegnante di lingue volontario e attualmente insegno olandese per la prima volta!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Questo sito web è attualmente ospitato su Github Pages o in locale, scaricando ed estraendo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">questa cartella (link per il download)</a>.<br>Non vengono utilizzati cookie o script ad eccezione delle preferenze linguistiche, JS, CSS e Three.js ufficiali.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Lezioni di Olandese</a></li></ul></div>`,
-        PT: `<h2>Bem-vindo!</h2><p>Obrigado pela visita! Sou um professor voluntário de idiomas, atualmente ensinando holandês pela primeira vez!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Este site está atualmente hospedado no Github Pages ou localmente, baixando e extraindo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">esta pasta (link para download)</a>.<br>Nenhum cookie ou script é usado, exceto preferências de idioma, JS, CSS e Three.js oficial.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Aulas de Holandês</a></li></ul></div>`,
-        SV: `<h2>Välkommen!</h2><p>Tack för att du tittar in! Jag är en volontär språklärare som för första gången undervisar i holländska!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Denna webbplats är för närvarande värd på Github Pages eller lokalt, genom att ladda ner och extrahera <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/Language-Lessons/archive/refs/heads/main.zip">denna mapp (nedladdningslänk)</a>.<br>Inga cookies eller skript används förutom språkpreferenser, officiell JS, CSS och Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Holländskalektioner</a></li></ul></div>`
+        EN: `<h2>Welcome!</h2><p>Thank you for stopping by! I am a volunteer language teacher, currently teaching Dutch for the first time!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">This website is currently hosted by Github Pages or locally, by downloading and extracting <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">this folder (download link)</a>.<br>No cookies or scripts are used except for language preferences, official JS, CSS and Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Dutch Lessons</a></li></ul></div>`,
+        NL: `<h2>Welkom!</h2><p>Bedankt voor uw bezoek! Ik ben een vrijwillige taalleraar die momenteel voor het eerst Nederlands geeft!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Deze website wordt momenteel gehost op Github Pages of lokaal, door het downloaden en uitpakken van <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">deze map (download link)</a>.<br>Er worden geen cookies of scripts gebruikt behalve taalvoorkeur, de officiële JS, CSS en Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Nederlandse Lessen</a></li></ul></div>`,
+        FR: `<h2>Bienvenue!</h2><p>Merci de votre visite ! Je suis un professeur de langues bénévole, et j'enseigne actuellement le néerlandais pour la première fois !</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Ce site web est actuellement hébergé sur Github Pages ou en local, en téléchargeant et en extrayant <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">ce dossier (lien de téléchargement)</a>.<br>Aucun cookie ou script n'est utilisé à l'exception des préférences linguistiques, JS, CSS et Three.js officiels.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Cours de Néerlandais</a></li></ul></div>`,
+        DE: `<h2>Willkommen!</h2><p>Danke für Ihren Besuch! Ich bin ein ehrenamtlicher Sprachlehrer und unterrichte derzeit zum ersten Mal Niederländisch!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Diese Website wird derzeit auf Github Pages oder lokal gehostet, durch Herunterladen und Entpacken von <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">diesem Ordner (Download-Link)</a>.<br>Es werden keine Cookies oder Skripte außer Spracheinstellungen, offiziellen JS, CSS und Three.js verwendet.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Niederländisch Unterricht</a></li></ul></div>`,
+        IT: `<h2>Benvenuti!</h2><p>Grazie per la visita! Sono un insegnante di lingue volontario e attualmente insegno olandese per la prima volta!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Questo sito web è attualmente ospitato su Github Pages o in locale, scaricando ed estraendo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">questa cartella (link per il download)</a>.<br>Non vengono utilizzati cookie o script ad eccezione delle preferenze linguistiche, JS, CSS e Three.js ufficiali.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Lezioni di Olandese</a></li></ul></div>`,
+        PT: `<h2>Bem-vindo!</h2><p>Obrigado pela visita! Sou um professor voluntário de idiomas, atualmente ensinando holandês pela primeira vez!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Este site está atualmente hospedado no Github Pages ou localmente, baixando e extraindo <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">esta pasta (link para download)</a>.<br>Nenhum cookie ou script é usado, exceto preferências de idioma, JS, CSS e Three.js oficial.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Aulas de Holandês</a></li></ul></div>`,
+        SV: `<h2>Välkommen!</h2><p>Tack för att du tittar in! Jag är en volontär språklärare som för första gången undervisar i holländska!</p><p style="font-size:0.9em; color: gray;font-style: oblique;">Denna webbplats är för närvarande värd på Github Pages eller lokalt, genom att ladda ner och extrahera <a style="color: #6b8e7c; text-decoration: none;" href="https://github.com/xaoscience/language-lessons/archive/refs/heads/main.zip">denna mapp (nedladdningslänk)</a>.<br>Inga cookies eller skript används förutom språkpreferenser, officiell JS, CSS och Three.js.</p><div class="content-links"><h3>${TranslationManager.get('common', 'sections')}:</h3><ul><li><a href="#" onclick="loadContent('dutch')">Holländskalektioner</a></li></ul></div>`
     }
 });
 ContentManager.addContent('dutch', {
@@ -244,13 +244,205 @@ ContentManager.addContent('dutch', {
 ContentManager.addContent('dutch1', {
     navigation: ['home', 'dutch', 'exercises'],
     body: {
-        EN: `<h2>Lesson 1: Introduction and exercises</h2><p class="description">In the first lesson, I attempt to transform my passion for language into an expanded introduction to the language that is most boring to me - Dutch. Herein, I shall discuss the etymology and origin and display the form of the language through the aid of history and art.</p><div class="content-links"><h3>Contents:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origin and etymology</a></li><li><a href="#" onclick="loadContent('dutch1_2')">The form of the language</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatics</a></li></ul></div>`,
-        NL: `<h2>Les 1: Introductie en oefeningen</h2><p class="description">In de eerste les, tracht ik mijn passie voor taal om te zetten in een uitgebreide kennismaking met de taal die het meest saai voor mij is - Nederlands. Hierbij zal ik de etymologie en oorsprong bespreken en de vorm van de taal uitbeelden met behulp van (m.b.v) historiek en kunst.</p><div class="content-links"><h3>Inhoud:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Oorsprong en etymologie</a></li><li><a href="#" onclick="loadContent('dutch1_2')">De vorm van de taal</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatica</a></li></ul></div>`,
-        FR: `<h2>Leçon 1: Introduction et exercices</h2><p class="description">Dans la première leçon, j'essaie de transformer ma passion pour la langue en une introduction approfondie à la langue qui m'ennuie le plus - le néerlandais. Ici, je discuterai de l'étymologie et de l'origine et présenterai la forme de la langue à travers l'histoire et l'art.</p><div class="content-links"><h3>Contenu:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origine et étymologie</a></li><li><a href="#" onclick="loadContent('dutch1_2')">La forme de la langue</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammaire</a></li></ul></div>`,
-        DE: `<h2>Lektion 1: Einführung und Übungen</h2><p class="description">In der ersten Lektion versuche ich, meine Sprachleidenschaft in eine erweiterte Einführung in die für mich langweiligste Sprache - Niederländisch - umzuwandeln. Hierin werde ich die Etymologie und den Ursprung besprechen und die Form der Sprache mithilfe von Geschichte und Kunst darstellen.</p><div class="content-links"><h3>Inhalt:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Ursprung und Etymologie</a></li><li><a href="#" onclick="loadContent('dutch1_2')">Die Form der Sprache</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatik</a></li></ul></div>`,
-        IT: `<h2>Lezione 1: Introduzione ed esercizi</h2><p class="description">Nella prima lezione, cerco di trasformare la mia passione per la lingua in un'introduzione approfondita alla lingua che trovo più noiosa - l'olandese. Qui, discuterò l'etimologia e l'origine e mostrerò la forma della lingua attraverso la storia e l'arte.</p><div class="content-links"><h3>Contenuti:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origine ed etimologia</a></li><li><a href="#" onclick="loadContent('dutch1_2')">La forma della lingua</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatica</a></li></ul></div>`,
-        PT: `<h2>Lição 1: Introdução e exercícios</h2><p class="description">Na primeira lição, tento transformar minha paixão pela língua em uma introdução expandida à língua que considero mais chata - o holandês. Aqui, discutirei a etimologia e origem e demonstrarei a forma da língua através da história e da arte.</p><div class="content-links"><h3>Conteúdo:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Origem e etimologia</a></li><li><a href="#" onclick="loadContent('dutch1_2')">A forma da língua</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Gramática</a></li></ul></div>`,
-        SV: `<h2>Lektion 1: Introduktion och övningar</h2><p class="description">I den första lektionen försöker jag omvandla min passion för språk till en utökad introduktion till det språk som jag tycker är tråkigast - holländska. Här kommer jag att diskutera etymologin och ursprunget samt visa språkets form genom historia och konst.</p><div class="content-links"><h3>Innehåll:</h3><ul><li><a href="#" onclick="loadContent('dutch1_1')">Ursprung och etymologi</a></li><li><a href="#" onclick="loadContent('dutch1_2')">Språkets form</a></li><li><a href="#" onclick="loadContent('dutch1_3')">Grammatik</a></li></ul></div>`
+        EN: `<h2>Lesson 1: Introduction to Dutch</h2>
+            <p class="description">Welcome to your first Dutch lesson! In this comprehensive introduction, we'll explore Dutch from its historical roots to its modern usage. This lesson is designed to take about 40 minutes, divided into three main sections.</p>
+            
+            <div class="lesson-overview">
+                <h3>What You'll Learn:</h3>
+                <ul>
+                    <li>The historical development of Dutch and its relationship to other Germanic languages</li>
+                    <li>Basic sound system and pronunciation patterns</li>
+                    <li>Fundamental grammar structures and sentence patterns</li>
+                </ul>
+                
+                <h3>Lesson Structure:</h3>
+                <ol>
+                    <li>Origin and Etymology (15 minutes)</li>
+                    <li>The Form of the Language (15 minutes)</li>
+                    <li>Basic Grammar and Practice (10 minutes)</li>
+                </ol>
+            </div>
+
+            <div class="quick-facts">
+                <h3>Quick Facts:</h3>
+                <ul>
+                    <li>Dutch is spoken by approximately 24 million people worldwide</li>
+                    <li>It's the official language in Netherlands, Belgium (Flanders), Suriname, and several Caribbean islands</li>
+                    <li>Dutch is considered one of the easiest languages for English speakers to learn</li>
+                </ul>
+            </div>
+
+            <div class="content-links">
+                <h3>Lesson Contents:</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('dutch1_1')">Part 1: Origin and Etymology - Trace the roots of Dutch</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_2')">Part 2: The Form of the Language - Master Dutch sounds</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_3')">Part 3: Basic Grammar - Start forming sentences</a></li>
+                </ul>
+            </div>
+
+            <div class="learning-tips">
+                <h3>Learning Tips:</h3>
+                <ul>
+                    <li>Use the pronunciation audio buttons throughout the lesson</li>
+                    <li>Practice each example out loud</li>
+                    <li>Take notes on patterns you notice</li>
+                    <li>Complete all interactive exercises</li>
+                </ul>
+            </div>`,
+        NL: `<h2>Les 1: Introductie tot Nederlands</h2>
+            <p class="description">Welkom bij je eerste Nederlandse les! In deze uitgebreide introductie verkennen we het Nederlands van historische wortels tot modern gebruik. Deze les duurt ongeveer 40 minuten, verdeeld over drie hoofdonderdelen.</p>
+            
+            <div class="lesson-overview">
+                <h3>Wat Je Gaat Leren:</h3>
+                <ul>
+                    <li>De historische ontwikkeling van het Nederlands en zijn relatie tot andere Germaanse talen</li>
+                    <li>Basis klanksysteem en uitspraakpatronen</li>
+                    <li>Fundamentele grammaticale structuren en zinspatronen</li>
+                </ul>
+                
+                <h3>Lesstructuur:</h3>
+                <ol>
+                    <li>Oorsprong en Etymologie (15 minuten)</li>
+                    <li>De Vorm van de Taal (15 minuten)</li>
+                    <li>Basis Grammatica en Oefening (10 minuten)</li>
+                </ol>
+            </div>
+
+            <div class="quick-facts">
+                <h3>Snelle Feiten:</h3>
+                <ul>
+                    <li>Nederlands wordt gesproken door ongeveer 24 miljoen mensen wereldwijd</li>
+                    <li>Het is de officiële taal in Nederland, België (Vlaanderen), Suriname en verschillende Caribische eilanden</li>
+                    <li>Nederlands wordt beschouwd als een van de makkelijkste talen voor Engelstaligen om te leren</li>
+                </ul>
+            </div>
+
+            <div class="content-links">
+                <h3>Lesinhoud:</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('dutch1_1')">Deel 1: Oorsprong en Etymologie</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_2')">Deel 2: De Vorm van de Taal</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_3')">Deel 3: Basis Grammatica</a></li>
+                </ul>
+            </div>`,
+        DE: `<h2>Lektion 1: Einführung in die niederländische Sprache</h2>
+            <p class="description">Willkommen zu Ihrer ersten Niederländisch-Lektion! In dieser umfassenden Einführung erkunden wir die niederländische Sprache von ihren historischen Wurzeln bis zur modernen Verwendung. Diese Lektion dauert etwa 40 Minuten und ist in drei Hauptabschnitte unterteilt.</p>
+            
+            <div class="lesson-overview">
+                <h3>Was Sie lernen werden:</h3>
+                <ul>
+                    <li>Die historische Entwicklung des Niederländischen und seine Beziehung zu anderen germanischen Sprachen</li>
+                    <li>Grundlegendes Lautsystem und Aussprachemuster</li>
+                    <li>Fundamentale grammatikalische Strukturen und Satzmuster</li>
+                </ul>
+                
+                <h3>Lektionsstruktur:</h3>
+                <ol>
+                    <li>Ursprung und Etymologie (15 Minuten)</li>
+                    <li>Die Form der Sprache (15 Minuten)</li>
+                    <li>Grundgrammatik und Übung (10 Minuten)</li>
+                </ol>
+            </div>
+
+            <div class="quick-facts">
+                <h3>Schnelle Fakten:</h3>
+                <ul>
+                    <li>Niederländisch wird von etwa 24 Millionen Menschen weltweit gesprochen</li>
+                    <li>Es ist Amtssprache in den Niederlanden, Belgien (Flandern), Surinam und verschiedenen karibischen Inseln</li>
+                    <li>Niederländisch gilt als eine der einfachsten Sprachen für englische Muttersprachler</li>
+                </ul>
+            </div>
+
+            <div class="content-links">
+                <h3>Lektionsinhalt:</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('dutch1_1')">Teil 1: Ursprung und Etymologie</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_2')">Teil 2: Die Form der Sprache</a></li>
+                    <li><a href="#" onclick="loadContent('dutch1_3')">Teil 3: Grundgrammatik</a></li>
+                </ul>
+            </div>`,
+        IT: `<h2>Lezione 1: Introduzione all'Olandese</h2>
+            <p class="description">Benvenuto alla tua prima lezione di olandese! In questa introduzione completa, esploreremo l'olandese dalle sue radici storiche all'uso moderno. Questa lezione è progettata per durare circa 40 minuti, divisa in tre sezioni principali.</p>
+            
+            <div class="lesson-overview">
+                <h3>Cosa Imparerai:</h3>
+                <ul>
+                    <li>Lo sviluppo storico dell'olandese e la sua relazione con altre lingue germaniche</li>
+                    <li>Sistema fonetico di base e modelli di pronuncia</li>
+                    <li>Strutture grammaticali fondamentali e modelli di frasi</li>
+                </ul>
+                
+                <h3>Struttura della Lezione:</h3>
+                <ol>
+                    <li>Origine ed Etimologia (15 minuti)</li>
+                    <li>La Forma della Lingua (15 minuti)</li>
+                    <li>Grammatica Base e Pratica (10 minuti)</li>
+                </ol>
+            </div>
+
+            <div class="quick-facts">
+                <h3>Fatti Rapidi:</h3>
+                <ul>
+                    <li>L'olandese è parlato da circa 24 milioni di persone in tutto il mondo</li>
+                    <li>È la lingua ufficiale nei Paesi Bassi, in Belgio (Fiandre), Suriname e diverse isole caraibiche</li>
+                    <li>L'olandese è considerata una delle lingue più facili da imparare per chi parla inglese</li>
+                </ul>
+            </div>`,
+        PT: `<h2>Lição 1: Introdução ao Holandês</h2>
+            <p class="description">Bem-vindo à sua primeira aula de holandês! Nesta introdução abrangente, exploraremos o holandês desde suas raízes históricas até o uso moderno. Esta lição foi projetada para durar cerca de 40 minutos, dividida em três seções principais.</p>
+            
+            <div class="lesson-overview">
+                <h3>O Que Você Vai Aprender:</h3>
+                <ul>
+                    <li>O desenvolvimento histórico do holandês e sua relação com outras línguas germânicas</li>
+                    <li>Sistema básico de sons e padrões de pronúncia</li>
+                    <li>Estruturas gramaticais fundamentais e padrões de frases</li>
+                </ul>
+                
+                <h3>Estrutura da Lição:</h3>
+                <ol>
+                    <li>Origem e Etimologia (15 minutos)</li>
+                    <li>A Forma da Língua (15 minutos)</li>
+                    <li>Gramática Básica e Prática (10 minutos)</li>
+                </ol>
+            </div>
+
+            <div class="quick-facts">
+                <h3>Fatos Rápidos:</h3>
+                <ul>
+                    <li>O holandês é falado por aproximadamente 24 milhões de pessoas em todo o mundo</li>
+                    <li>É o idioma oficial na Holanda, Bélgica (Flandres), Suriname e várias ilhas caribenhas</li>
+                    <li>O holandês é considerado uma das línguas mais fáceis de aprender para falantes de inglês</li>
+                </ul>
+            </div>`,
+        SV: `<h2>Lektion 1: Introduktion till Nederländska</h2>
+            <p class="description">Välkommen till din första lektion i nederländska! I denna omfattande introduktion kommer vi att utforska nederländska från dess historiska rötter till modern användning. Denna lektion är utformad att ta cirka 40 minuter, uppdelad i tre huvuddelar.</p>
+            
+            <div class="lesson-overview">
+                <h3>Vad Du Kommer Att Lära Dig:</h3>
+                <ul>
+                    <li>Den historiska utvecklingen av nederländska och dess relation till andra germanska språk</li>
+                    <li>Grundläggande ljudsystem och uttalsmönster</li>
+                    <li>Grundläggande grammatiska strukturer och meningsbyggnad</li>
+                </ul>
+                
+                <h3>Lektionsstruktur:</h3>
+                <ol>
+                    <li>Ursprung och Etymologi (15 minuter)</li>
+                    <li>Språkets Form (15 minuter)</li>
+                    <li>Grundläggande Grammatik och Övning (10 minuter)</li>
+                </ol>
+            </div>
+
+            <div class="quick-facts">
+                <h3>Snabba Fakta:</h3>
+                <ul>
+                    <li>Nederländska talas av cirka 24 miljoner människor världen över</li>
+                    <li>Det är det officiella språket i Nederländerna, Belgien (Flandern), Surinam och flera karibiska öar</li>
+                    <li>Nederländska anses vara ett av de lättaste språken för engelsktalande att lära sig</li>
+                </ul>
+            </div>`
     }
 });
 ContentManager.addContent('dutch1_1', {
@@ -260,222 +452,937 @@ ContentManager.addContent('dutch1_1', {
             <div class="content-image">
                 <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="A hierarchical tree diagram of the entire germanic branch.">
             </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo European --> Proto-Germanic --> West Germanic --> West Low Franconian --> Dutch</p>`,
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo European --> Proto-Germanic --> West Germanic --> West Low Franconian --> Dutch</p>
+            <h2>Part 1: Origin and Etymology</h2>
+            <div class="history-section">
+                <h3>Historical Development</h3>
+                <p>Dutch emerged from the West Germanic branch of the Indo-European language family. Let's trace its evolution:</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>500 BCE - Proto-Germanic</h4>
+                        <p>Original Germanic language with words like:</p>
+                        <ul>
+                            <li>*watōr (water) → Dutch: water</li>
+                            <li>*hūs (house) → Dutch: huis</li>
+                            <div class="audio-example">
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️ Listen: huis</button>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>100-500 CE - Old Dutch</h4>
+                        <p>Early written examples include:</p>
+                        <ul>
+                            <li>"Hebban olla vogala" (Have all birds) - Oldest known Dutch text</li>
+                            <div class="audio-example">
+                                <button onclick="playAudio('vogels')" class="audio-btn">▶️ Listen: vogels (modern)</button>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Modern Connections</h4>
+                        <p>Compare these cognates:</p>
+                        <table class="language-comparison">
+                            <tr>
+                                <th>English</th>
+                                <th>Dutch</th>
+                                <th>German</th>
+                            </tr>
+                            <tr>
+                                <td>house</td>
+                                <td>huis</td>
+                                <td>Haus</td>
+                            </tr>
+                            <tr>
+                                <td>water</td>
+                                <td>water</td>
+                                <td>Wasser</td>
+                            </tr>
+                            <tr>
+                                <td>book</td>
+                                <td>boek</td>
+                                <td>Buch</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>Sound Changes Over Time</h3>
+                <p>Listen to these examples of sound evolution:</p>
+                <div class="sound-evolution">
+                    <div class="example">
+                        <p>Proto-Germanic *hūs → Dutch 'huis'</p>
+                        <button onclick="playAudio('huis-evolution')" class="audio-btn">▶️ Listen</button>
+                    </div>
+                    <div class="example">
+                        <p>Old Dutch 'dag' → Modern Dutch 'dag'</p>
+                        <button onclick="playAudio('dag')" class="audio-btn">▶️ Listen</button>
+                    </div>
+                </div>
+            </div>`,
         NL: `<h2>Oorsprong en etymologie</h2>
             <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Een hiërarchische boomdiagram van de hele germaanse tak.">
+                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Een hiërarchische boomdiagram van de gehele Germaanse tak.">
             </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europees --> Proto-Germaans --> West Germaans --> West Lagefrankisch --> Nederlands</p>`,
-        FR: `<h2>Origine et étymologie</h2>
-            <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Un diagramme arborescent hiérarchique de toute la branche germanique.">
+            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo-Europees --> Proto-Germaans --> West-Germaans --> West-Nederfrankisch --> Nederlands</p>
+            <h2>Deel 1: Oorsprong en Etymologie</h2>
+            <div class="history-section">
+                <h3>Historische Ontwikkeling</h3>
+                <p>Het Nederlands is ontstaan uit de West-Germaanse tak van de Indo-Europese taalfamilie. Laten we de evolutie ervan volgen:</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>500 v.Chr. - Proto-Germaans</h4>
+                        <p>Oorspronkelijke Germaanse taal met woorden zoals:</p>
+                        <ul>
+                            <li>*watōr (water) → Nederlands: water</li>
+                            <li>*hūs (huis) → Nederlands: huis</li>
+                            <div class="audio-example">
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️ Luister: huis</button>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>100-500 n.Chr. - Oudnederlands</h4>
+                        <p>Vroege geschreven voorbeelden zijn onder andere:</p>
+                        <ul>
+                            <li>"Hebban olla vogala" (Hebben alle vogels) - Oudste bekende Nederlandse tekst</li>
+                            <div class="audio-example">
+                                <button onclick="playAudio('vogels')" class="audio-btn">▶️ Luister: vogels (modern)</button>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Moderne Verbindingen</h4>
+                        <p>Vergelijk deze verwante woorden:</p>
+                        <table class="language-comparison">
+                            <tr>
+                                <th>Engels</th>
+                                <th>Nederlands</th>
+                                <th>Duits</th>
+                            </tr>
+                            <tr>
+                                <td>house</td>
+                                <td>huis</td>
+                                <td>Haus</td>
+                            </tr>
+                            <tr>
+                                <td>water</td>
+                                <td>water</td>
+                                <td>Wasser</td>
+                            </tr>
+                            <tr>
+                                <td>book</td>
+                                <td>boek</td>
+                                <td>Buch</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Européen --> Proto-Germanique --> Germanique Occidental --> Bas-Francique Occidental --> Néerlandais</p>`,
-        DE: `<h2>Ursprung und Etymologie</h2>
-            <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Ein hierarchisches Baumdiagramm des gesamten germanischen Zweigs.">
+
+            <div class="practice-section">
+                <h3>Klankveranderingen Door de Tijd</h3>
+                <p>Luister naar deze voorbeelden van klankevolutie:</p>
+                <div class="sound-evolution">
+                    <div class="example">
+                        <p>Proto-Germaans *hūs → Nederlands 'huis'</p>
+                        <button onclick="playAudio('huis-evolution')" class="audio-btn">▶️ Luister</button>
+                    </div>
+                    <div class="example">
+                        <p>Oudnederlands 'dag' → Modern Nederlands 'dag'</p>
+                        <button onclick="playAudio('dag')" class="audio-btn">▶️ Luister</button>
+                    </div>
+                </div>
+            </div>`,
+        DE: `<h2>Teil 1: Ursprung und Etymologie</h2>
+            <div class="history-section">
+                <h3>Historische Entwicklung</h3>
+                <p>Das Niederländische entstand aus dem westgermanischen Zweig der indogermanischen Sprachfamilie. Lassen Sie uns seine Entwicklung verfolgen:</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>500 v. Chr. - Urgermanisch</h4>
+                        <p>Ursprüngliche germanische Sprache mit Wörtern wie:</p>
+                        <ul>
+                            <li>*watōr (Wasser) → Niederländisch: water</li>
+                            <li>*hūs (Haus) → Niederländisch: huis</li>
+                            <div class="audio-example">
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️ Hören: huis</button>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>100-500 n. Chr. - Altniederländisch</h4>
+                        <p>Frühe schriftliche Beispiele umfassen:</p>
+                        <ul>
+                            <li>"Hebban olla vogala" (Haben alle Vögel) - Ältester bekannter niederländischer Text</li>
+                            <div class="audio-example">
+                                <button onclick="playAudio('vogels')" class="audio-btn">▶️ Hören: vogels (modern)</button>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Moderne Verbindungen</h4>
+                        <p>Vergleichen Sie diese verwandten Wörter:</p>
+                        <table class="language-comparison">
+                            <tr>
+                                <th>Englisch</th>
+                                <th>Niederländisch</th>
+                                <th>Deutsch</th>
+                            </tr>
+                            <tr>
+                                <td>house</td>
+                                <td>huis</td>
+                                <td>Haus</td>
+                            </tr>
+                            <tr>
+                                <td>water</td>
+                                <td>water</td>
+                                <td>Wasser</td>
+                            </tr>
+                            <tr>
+                                <td>book</td>
+                                <td>boek</td>
+                                <td>Buch</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indoeuropäisch --> Proto-Germanisch --> Westgermanisch --> Westfränkisch --> Niederländisch</p>`,
-        IT: `<h2>Origine ed etimologia</h2>
-            <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Un diagramma ad albero gerarchico dell'intero ramo germanico.">
-            </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europeo --> Proto-Germanico --> Germanico Occidentale --> Basso Francone Occidentale --> Olandese</p>`,
-        PT: `<h2>Origem e etimologia</h2>
-            <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Um diagrama em árvore hierárquica de todo o ramo germânico.">
-            </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo Europeu --> Proto-Germânico --> Germânico Ocidental --> Baixo-Francônio Ocidental --> Holandês</p>`,
-        SV: `<h2>Ursprung och etymologi</h2>
-            <div class="content-image">
-                <img src="https://www.highlifehighland.com/nucleus-nuclear-caithness-archives/wp-content/uploads/sites/121/2023/01/Picture15-768x475.png" alt="Ett hierarkiskt träddiagram över hela den germanska grenen.">
-            </div>
-            <p style="font-weight: bold; font-size: 0.9em;">Proto-Indo-Europeiska --> Proto-Germanska --> Västgermanska --> Västlågfrankiska --> Holländska</p>`
+
+            <div class="practice-section">
+                <h3>Lautveränderungen im Laufe der Zeit</h3>
+                <p>Hören Sie sich diese Beispiele für Lautentwicklung an:</p>
+                <div class="sound-evolution">
+                    <div class="example">
+                        <p>Urgermanisch *hūs → Niederländisch 'huis'</p>
+                        <button onclick="playAudio('huis-evolution')" class="audio-btn">▶️ Hören</button>
+                    </div>
+                    <div class="example">
+                        <p>Altniederländisch 'dag' → Modernes Niederländisch 'dag'</p>
+                        <button onclick="playAudio('dag')" class="audio-btn">▶️ Hören</button>
+                    </div>
+                </div>
+            </div>`,
+        IT: `<h2>Origine ed Etimologia dell'Olandese</h2>
+            <p>L'olandese appartiene al ramo germanico occidentale delle lingue indoeuropee. Si è evoluto dal proto-germanico attraverso l'antico olandese fino alla sua forma moderna. È strettamente imparentato con il tedesco e condivide molte caratteristiche con l'inglese.</p>
+            
+            <h3>Sviluppo Storico</h3>
+            <ul>
+                <li>Pre-500 CE: Proto-germanico</li>
+                <li>500-1150: Antico olandese</li>
+                <li>1150-1500: Medio olandese</li>
+                <li>1500-presente: Olandese moderno</li>
+            </ul>`,
+        PT: `<h2>Origem e Etimologia do Holandês</h2>
+            <p>O holandês pertence ao ramo germânico ocidental das línguas indo-europeias. Evoluiu do proto-germânico através do holandês antigo até sua forma moderna. É intimamente relacionado ao alemão e compartilha muitas características com o inglês.</p>
+            
+            <h3>Desenvolvimento Histórico</h3>
+            <ul>
+                <li>Pré-500 EC: Proto-germânico</li>
+                <li>500-1150: Holandês antigo</li>
+                <li>1150-1500: Holandês médio</li>
+                <li>1500-presente: Holandês moderno</li>
+            </ul>`,
+        SV: `<h2>Nederländskans Ursprung och Etymologi</h2>
+            <p>Nederländska tillhör den västgermanska grenen av de indoeuropeiska språken. Det utvecklades från protogermanska genom fornnederländska till sin moderna form. Det är nära besläktat med tyska och delar många egenskaper med engelska.</p>
+            
+            <h3>Historisk Utveckling</h3>
+            <ul>
+                <li>Före 500 e.Kr.: Protogermanska</li>
+                <li>500-1150: Fornnederländska</li>
+                <li>1150-1500: Medelnederländska</li>
+                <li>1500-nutid: Modern nederländska</li>
+            </ul>`
     }
 });
 ContentManager.addContent('dutch1_2', {
-    navigation: ['home', 'dutch1_1', 'dutch1_3', 'exercises'],
+    navigation: ['home', 'dutch1', 'exercises'],
     body: {
-        EN: `<h2>The Form of the Language</h2>
-        <p>Dutch uses the Latin alphabet with 26 letters. Special combinations include:</p>
-        <ul>
-            <li>ij - Often treated as a single letter</li>
-            <li>ch - Guttural sound</li>
-            <li>sch - Common combination</li>
-        </ul>
-        <p>Pronunciation Rules:</p>
-        <ul>
-            <li>aa, ee, oo - Long vowels</li>
-            <li>g/ch - Guttural sounds</li>
-            <li>ui, eu, oe - Unique Dutch sounds</li>
-        </ul>`,
-        NL: `<h2>De Vorm van de Taal</h2>
-        <p>Nederlands gebruikt het Latijnse alfabet met 26 letters. Bijzondere combinaties zijn:</p>
-        <ul>
-            <li>ij - Vaak behandeld als één letter</li>
-            <li>ch - Keelklank</li>
-            <li>sch - Veelvoorkomende combinatie</li>
-        </ul>
-        <p>Uitspraakregels:</p>
-        <ul>
-            <li>aa, ee, oo - Lange klinkers</li>
-            <li>g/ch - Keelklanken</li>
-            <li>ui, eu, oe - Unieke Nederlandse klanken</li>
-        </ul>`,
-        FR: `<h2>La Forme de la Langue</h2>
-        <p>Le néerlandais utilise l'alphabet latin avec 26 lettres. Les combinaisons spéciales incluent:</p>
-        <ul>
-            <li>ij - Souvent traité comme une seule lettre</li>
-            <li>ch - Son guttural</li>
-            <li>sch - Combinaison courante</li>
-        </ul>
-        <p>Règles de prononciation:</p>
-        <ul>
-            <li>aa, ee, oo - Voyelles longues</li>
-            <li>g/ch - Sons gutturaux</li>
-            <li>ui, eu, oe - Sons uniques au néerlandais</li>
-        </ul>`,
-        DE: `<h2>Die Form der Sprache</h2>
-        <p>Niederländisch verwendet das lateinische Alphabet mit 26 Buchstaben. Besondere Kombinationen sind:</p>
-        <ul>
-            <li>ij - Oft als ein Buchstabe behandelt</li>
-            <li>ch - Kehllaut</li>
-            <li>sch - Häufige Kombination</li>
-        </ul>
-        <p>Ausspracheregeln:</p>
-        <ul>
-            <li>aa, ee, oo - Lange Vokale</li>
-            <li>g/ch - Kehllaute</li>
-            <li>ui, eu, oe - Einzigartige niederländische Laute</li>
-        </ul>`,
-        IT: `<h2>La Forma della Lingua</h2>
-        <p>L'olandese usa l'alfabeto latino con 26 lettere. Le combinazioni speciali includono:</p>
-        <ul>
-            <li>ij - Spesso trattata come una singola lettera</li>
-            <li>ch - Suono gutturale</li>
-            <li>sch - Combinazione comune</li>
-        </ul>
-        <p>Regole di pronuncia:</p>
-        <ul>
-            <li>aa, ee, oo - Vocali lunghe</li>
-            <li>g/ch - Suoni gutturali</li>
-            <li>ui, eu, oe - Suoni unici dell'olandese</li>
-        </ul>`,
-        PT: `<h2>A Forma da Língua</h2>
-        <p>O holandês usa o alfabeto latino com 26 letras. Combinações especiais incluem:</p>
-        <ul>
-            <li>ij - Frequentemente tratado como uma única letra</li>
-            <li>ch - Som gutural</li>
-            <li>sch - Combinação comum</li>
-        </ul>
-        <p>Regras de pronúncia:</p>
-        <ul>
-            <li>aa, ee, oo - Vogais longas</li>
-            <li>g/ch - Sons guturais</li>
-            <li>ui, eu, oe - Sons únicos do holandês</li>
-        </ul>`,
-        SV: `<h2>Språkets Form</h2>
-        <p>Holländska använder det latinska alfabetet med 26 bokstäver. Speciella kombinationer inkluderar:</p>
-        <ul>
-            <li>ij - Ofta behandlad som en enda bokstav</li>
-            <li>ch - Gutturalt ljud</li>
-            <li>sch - Vanlig kombination</li>
-        </ul>
-        <p>Uttalsregler:</p>
-        <ul>
-            <li>aa, ee, oo - Långa vokaler</li>
-            <li>g/ch - Gutturala ljud</li>
-            <li>ui, eu, oe - Unika holländska ljud</li>
-        </ul>`
+        EN: `<h2>Part 2: The Form of the Language</h2>
+            <div class="pronunciation-guide">
+                <h3>Dutch Sound System</h3>
+                <p>Dutch uses the Latin alphabet with several unique sounds. Let's practice them:</p>
+                
+                <div class="sound-section">
+                    <h4>1. Special Vowel Sounds</h4>
+                    <div class="sound-examples">
+                        <div class="sound-card">
+                            <p>ui - unique Dutch diphtong</p>
+                            <p>Example: huis (house)</p>
+                            <button onclick="playAudio('huis')" class="audio-btn" data-audio="nl-huis">▶️ Listen</button>
+                            <p class="pronunciation-tip">Tip: Like "ow" in "how" but with rounded lips</p>
+                        </div>
+                        
+                        <div class="sound-card">
+                            <p>eu - front rounded vowel</p>
+                            <p>Example: deur (door)</p>
+                            <button onclick="playAudio('deur')" class="audio-btn" data-audio="nl-deur">▶️ Listen</button>
+                            <p class="pronunciation-tip">Tip: Like "u" in French "deux"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sound-section">
+                    <h4>2. Consonant Combinations</h4>
+                    <div class="sound-examples">
+                        <div class="sound-card">
+                            <p>sch - common combination</p>
+                            <p>Example: school (school)</p>
+                            <button onclick="playAudio('school')" class="audio-btn" data-audio="nl-school">▶️ Listen</button>
+                            <p class="pronunciation-tip">Tip: Like "s+ch" where ch is guttural</p>
+                        </div>
+                        
+                        <div class="sound-card">
+                            <p>g/ch - guttural sounds</p>
+                            <p>Example: goed (good)</p>
+                            <button onclick="playAudio('goed')" class="audio-btn" data-audio="nl-goed">▶️ Listen</button>
+                            <p class="pronunciation-tip">Tip: Like clearing your throat softly</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Practice Exercise</h3>
+                    <p>Try these common words with multiple special sounds:</p>
+                    <div class="practice-words">
+                        <div class="word-card">
+                            <p>gezellig (cozy)</p>
+                            <button onclick="playAudio('gezellig')" class="audio-btn">▶️ Listen</button>
+                            <button onclick="checkPronunciation('gezellig')" class="practice-btn">Practice</button>
+                        </div>
+                        <div class="word-card">
+                            <p>scheur (tear/rip)</p>
+                            <button onclick="playAudio('scheur')" class="audio-btn">▶️ Listen</button>
+                            <button onclick="checkPronunciation('scheur')" class="practice-btn">Practice</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+        NL: `<h2>Deel 2: De Vorm van de Taal</h2>
+            <div class="language-form">
+                <h3>Klanksysteem</h3>
+                <div class="sound-section">
+                    <h4>Basis Klanken</h4>
+                    <div class="sound-examples">
+                        <div class="example">
+                            <p>De "G" klank:</p>
+                            <span class="word">goed</span>
+                            <button onclick="playAudio('goed')" class="audio-btn">▶️ Luister</button>
+                        </div>
+                        <div class="example">
+                            <p>De "UI" klank:</p>
+                            <span class="word">huis</span>
+                            <button onclick="playAudio('huis')" class="audio-btn">▶️ Luister</button>
+                        </div>
+                        <div class="example">
+                            <p>De "AA" klank:</p>
+                            <span class="word">maar</span>
+                            <button onclick="playAudio('maar')" class="audio-btn">▶️ Luister</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="writing-system">
+                    <h3>Schrijfsysteem</h3>
+                    <p>Het Nederlands gebruikt het Latijnse alfabet met 26 letters. Enkele belangrijke combinaties:</p>
+                    <ul>
+                        <li>IJ - wordt vaak als één letter beschouwd</li>
+                        <li>CH - voor de typische Nederlandse keelklank</li>
+                        <li>SCH - zoals in 'school'</li>
+                    </ul>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Oefening met Klanken</h3>
+                    <div class="practice-examples">
+                        <div class="example">
+                            <p>Probeer deze woorden:</p>
+                            <div class="word-practice">
+                                <span>schip</span>
+                                <button onclick="playAudio('schip')" class="audio-btn">▶️ Luister</button>
+                            </div>
+                            <div class="word-practice">
+                                <span>blijf</span>
+                                <button onclick="playAudio('blijf')" class="audio-btn">▶️ Luister</button>
+                            </div>
+                            <div class="word-practice">
+                                <span>huis</span>
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️ Luister</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+        DE: `<h2>Teil 2: Die Form der Sprache</h2>
+            <div class="pronunciation-guide">
+                <h3>Niederländisches Lautsystem</h3>
+                <p>Das Niederländische verwendet das lateinische Alphabet mit mehreren einzigartigen Lauten. Lassen Sie uns sie üben:</p>
+                
+                <div class="sound-section">
+                    <h4>1. Besondere Vokallaute</h4>
+                    <div class="sound-examples">
+                        <div class="sound-card">
+                            <p>ui - einzigartiger niederländischer Diphthong</p>
+                            <p>Beispiel: huis (house)</p>
+                            <button onclick="playAudio('huis')" class="audio-btn">▶️ Hören</button>
+                            <p class="pronunciation-tip">Tipp: Wie "ow" in "how" aber mit gerundeten Lippen</p>
+                        </div>
+                        
+                        <div class="sound-card">
+                            <p>eu - vorderer gerundeter Vokal</p>
+                            <p>Beispiel: deur (door)</p>
+                            <button onclick="playAudio('deur')" class="audio-btn">▶️ Hören</button>
+                            <p class="pronunciation-tip">Tipp: Wie "u" im Französischen "deux"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sound-section">
+                    <h4>2. Konsonantenkombinationen</h4>
+                    <div class="sound-examples">
+                        <div class="sound-card">
+                            <p>sch - häufige Kombination</p>
+                            <p>Beispiel: school (school)</p>
+                            <button onclick="playAudio('school')" class="audio-btn">▶️ Hören</button>
+                            <p class="pronunciation-tip">Tipp: Wie "s+ch" wobei ch guttural ist</p>
+                        </div>
+                        
+                        <div class="sound-card">
+                            <p>g/ch - gutturale Laute</p>
+                            <p>Beispiel: goed (good)</p>
+                            <button onclick="playAudio('goed')" class="audio-btn">▶️ Hören</button>
+                            <p class="pronunciation-tip">Tipp: Wie sanftes Räuspern</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Übung</h3>
+                    <p>Versuchen Sie diese häufigen Wörter mit mehreren besonderen Lauten:</p>
+                    <div class="practice-words">
+                        <div class="word-card">
+                            <p>gezellig (cozy)</p>
+                            <button onclick="playAudio('gezellig')" class="audio-btn">▶️ Hören</button>
+                            <button onclick="checkPronunciation('gezellig')" class="practice-btn">Üben</button>
+                        </div>
+                        <div class="word-card">
+                            <p>scheur (tear/rip)</p>
+                            <button onclick="playAudio('scheur')" class="audio-btn">▶️ Hören</button>
+                            <button onclick="checkPronunciation('scheur')" class="practice-btn">Üben</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+        IT: `<h2>Distribuzione Geografica</h2>
+            <p>L'olandese è parlato principalmente in:</p>
+            <ul>
+                <li>Paesi Bassi (lingua ufficiale)</li>
+                <li>Belgio (una delle tre lingue ufficiali)</li>
+                <li>Suriname (lingua ufficiale)</li>
+                <li>Aruba, Curaçao e Sint Maarten (Caraibi Olandesi)</li>
+            </ul>`,
+        PT: `<h2>Distribuição Geográfica</h2>
+            <p>O holandês é falado principalmente em:</p>
+            <ul>
+                <li>Países Baixos (língua oficial)</li>
+                <li>Bélgica (uma das três línguas oficiais)</li>
+                <li>Suriname (língua oficial)</li>
+                <li>Aruba, Curaçao e Sint Maarten (Caribe Holandês)</li>
+            </ul>`,
+        SV: `<h2>Geografisk Distribution</h2>
+            <p>Nederländska talas huvudsakligen i:</p>
+            <ul>
+                <li>Nederländerna (officiellt språk)</li>
+                <li>Belgien (ett av tre officiella språk)</li>
+                <li>Surinam (officiellt språk)</li>
+                <li>Aruba, Curaçao och Sint Maarten (Nederländska Karibien)</li>
+            </ul>`
     }
 });
 ContentManager.addContent('dutch1_3', {
-    navigation: ['home', 'dutch1_2', 'dutch2', 'exercises'],
+    navigation: ['home', 'dutch1', 'exercises'],
     body: {
-        EN: `<h2>Grammar Basics</h2>
-        <p>Dutch grammar shares features with both English and German:</p>
-        <ul>
-            <li>Word order: Subject-Verb-Object (in main clauses)</li>
-            <li>Two grammatical genders: Common and neuter</li>
-            <li>Articles: 'de' (common) and 'het' (neuter)</li>
-        </ul>
-        <p>Verb conjugation examples:</p>
-        <ul>
-            <li>zijn (to be): ik ben, jij bent, hij/zij/het is</li>
-            <li>hebben (to have): ik heb, jij hebt, hij/zij/het heeft</li>
-        </ul>`,
-        NL: `<h2>Grammatica Basis</h2>
-        <p>Nederlandse grammatica deelt kenmerken met zowel Engels als Duits:</p>
-        <ul>
-            <li>Woordvolgorde: Onderwerp-Werkwoord-Object (in hoofdzinnen)</li>
-            <li>Twee grammaticale geslachten: De-woorden en het-woorden</li>
-            <li>Lidwoorden: 'de' (de-woorden) en 'het' (het-woorden)</li>
-        </ul>
-        <p>Werkwoordvervoegingen voorbeelden:</p>
-        <ul>
-            <li>zijn: ik ben, jij bent, hij/zij/het is</li>
-            <li>hebben: ik heb, jij hebt, hij/zij/het heeft</li>
-        </ul>`,
-        FR: `<h2>Bases Grammaticales</h2>
-        <p>La grammaire néerlandaise partage des caractéristiques avec l'anglais et l'allemand:</p>
-        <ul>
-            <li>Ordre des mots: Sujet-Verbe-Objet (dans les propositions principales)</li>
-            <li>Deux genres grammaticaux: Commun et neutre</li>
-            <li>Articles: 'de' (commun) et 'het' (neutre)</li>
-        </ul>
-        <p>Exemples de conjugaison:</p>
-        <ul>
-            <li>zijn (être): ik ben, jij bent, hij/zij/het is</li>
-            <li>hebben (avoir): ik heb, jij hebt, hij/zij/het heeft</li>
-        </ul>`,
-        DE: `<h2>Grundlegende Grammatik</h2>
-        <p>Die niederländische Grammatik teilt Merkmale mit Englisch und Deutsch:</p>
-        <ul>
-            <li>Wortstellung: Subjekt-Verb-Objekt (in Hauptsätzen)</li>
-            <li>Zwei grammatikalische Geschlechter: Gemeinsam und neutral</li>
-            <li>Artikel: 'de' (gemeinsam) und 'het' (neutral)</li>
-        </ul>
-        <p>Beispiele für Verbkonjugation:</p>
-        <ul>
-            <li>zijn (sein): ik ben, jij bent, hij/zij/het ist</li>
-            <li>hebben (haben): ik habe, jij hebt, hij/zij/het hat</li>
-        </ul>`,
-        IT: `<h2>Grammatica di Base</h2>
-        <p>La grammatica olandese condivide caratteristiche con l'inglese e il tedesco:</p>
-        <ul>
-            <li>Ordine delle parole: Soggetto-Verbo-Oggetto (nelle frasi principali)</li>
-            <li>Due generi grammaticali: Comune e neutro</li>
-            <li>Articoli: 'de' (comune) e 'het' (neutro)</li>
-        </ul>
-        <p>Esempi di coniugazione dei verbi:</p>
-        <ul>
-            <li>zijn (essere): ik ben, jij bent, hij/zij/het is</li>
-            <li>hebben (avere): ik ho, jij hebt, hij/zij/het ha</li>
-        </ul>`,
-        PT: `<h2>Gramática Básica</h2>
-        <p>A gramática holandesa compartilha características com o inglês e o alemão:</p>
-        <ul>
-            <li>Ordem das palavras: Sujeito-Verbo-Objeto (em orações principais)</li>
-            <li>Dois gêneros gramaticais: Comum e neutro</li>
-            <li>Artigos: 'de' (comum) e 'het' (neutro)</li>
-        </ul>
-        <p>Exemplos de conjugação verbal:</p>
-        <ul>
-            <li>zijn (ser/estar): ik ben, jij bent, hij/zij/het is</li>
-            <li>hebben (ter): ik heb, jij hebt, hij/zij/het heeft</li>
-        </ul>`,
-        SV: `<h2>Grundläggande Grammatik</h2>
-        <p>Holländsk grammatik delar egenskaper med både engelska och tyska:</p>
-        <ul>
-            <li>Ordföljd: Subjekt-Verb-Objekt (i huvudsatser)</li>
-            <li>Två grammatiska genus: Utrum och neutrum</li>
-            <li>Artiklar: 'de' (utrum) och 'het' (neutrum)</li>
-        </ul>
-        <p>Exempel på verbböjning:</p>
-        <ul>
-            <li>zijn (vara): ik ben, jij bent, hij/zij/het is</li>
-            <li>hebben (ha): ik heb, jij hebt, hij/zij/het heeft</li>
-        </ul>`
+        EN: `<h2>Part 3: Basic Grammar</h2>
+            <div class="grammar-section">
+                <h3>Sentence Structure (SVO)</h3>
+                <p>Dutch follows Subject-Verb-Object order in main clauses:</p>
+                
+                <div class="example-section">
+                    <div class="example-card">
+                        <h4>Basic SVO Pattern</h4>
+                        <table class="grammar-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Verb</th>
+                                <th>Object</th>
+                            </tr>
+                            <tr>
+                                <td>Ik</td>
+                                <td>drink</td>
+                                <td>koffie</td>
+                            </tr>
+                            <tr>
+                                <td>(I)</td>
+                                <td>(drink)</td>
+                                <td>(coffee)</td>
+                            </tr>
+                        </table>
+                        <button onclick="playAudio('ik-drink-koffie')" class="audio-btn">▶️ Listen</button>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>With Time Expression</h4>
+                        <p>Time expressions often come at the beginning or end:</p>
+                        <table class="grammar-table">
+                            <tr>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Verb</th>
+                                <th>Object</th>
+                            </tr>
+                            <tr>
+                                <td>Vandaag</td>
+                                <td>ik</td>
+                                <td>leer</td>
+                                <td>Nederlands</td>
+                            </tr>
+                            <tr>
+                                <td>(Today)</td>
+                                <td>(I)</td>
+                                <td>(learn)</td>
+                                <td>(Dutch)</td>
+                            </tr>
+                        </table>
+                        <button onclick="playAudio('vandaag-ik-leer')" class="audio-btn">▶️ Listen</button>
+                    </div>
+                </div>
+
+                <div class="verb-section">
+                    <h3>Essential Verb Forms</h3>
+                    <div class="verb-conjugation">
+                        <h4>zijn (to be)</h4>
+                        <table class="conjugation-table">
+                            <tr>
+                                <td>ik ben</td>
+                                <td>(I am)</td>
+                                <button onclick="playAudio('ik-ben')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>jij bent</td>
+                                <td>(you are)</td>
+                                <button onclick="playAudio('jij-bent')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>hij/zij/het is</td>
+                                <td>(he/she/it is)</td>
+                                <button onclick="playAudio('hij-is')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>wij zijn</td>
+                                <td>(we are)</td>
+                                <button onclick="playAudio('wij-zijn')" class="audio-btn">▶️</button>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="verb-conjugation">
+                        <h4>hebben (to have)</h4>
+                        <table class="conjugation-table">
+                            <tr>
+                                <td>ik heb</td>
+                                <td>(I have)</td>
+                                <button onclick="playAudio('ik-heb')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>jij hebt</td>
+                                <td>(you have)</td>
+                                <button onclick="playAudio('jij-hebt')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>hij/zij/het heeft</td>
+                                <td>(he/she/it has)</td>
+                                <button onclick="playAudio('hij-heeft')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>wij hebben</td>
+                                <td>(we have)</td>
+                                <button onclick="playAudio('wij-hebben')" class="audio-btn">▶️</button>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Practice Exercises</h3>
+                    <div class="exercise-card">
+                        <h4>Form Basic Sentences</h4>
+                        <p>Create sentences using the elements provided:</p>
+                        <div class="sentence-builder" id="sentence-builder-1">
+                            <div class="word-bank">
+                                <span class="drag-word">Ik</span>
+                                <span class="drag-word">zij</span>
+                                <span class="drag-word">bent</span>
+                                <span class="drag-word">is</span>
+                                <span class="drag-word">student</span>
+                                <span class="drag-word">leraar</span>
+                            </div>
+                            <div class="sentence-space" data-correct="Ik bent student">
+                                Drop words here to form: "I am a student"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+        NL: `<h2>Deel 3: Basis Grammatica</h2>
+            <div class="grammar-section">
+                <h3>Zinsstructuur (SVO)</h3>
+                <p>Het Nederlands volgt de volgorde Onderwerp-Verb-Object in hoofdzinnen:</p>
+                
+                <div class="example-section">
+                    <div class="example-card">
+                        <h4>Basis SVO Patroon</h4>
+                        <table class="grammar-table">
+                            <tr>
+                                <th>Onderwerp</th>
+                                <th>Werkwoord</th>
+                                <th>Object</th>
+                            </tr>
+                            <tr>
+                                <td>Ik</td>
+                                <td>drink</td>
+                                <td>koffie</td>
+                            </tr>
+                            <tr>
+                                <td>(I)</td>
+                                <td>(drink)</td>
+                                <td>(coffee)</td>
+                            </tr>
+                        </table>
+                        <button onclick="playAudio('ik-drink-koffie')" class="audio-btn">▶️ Luister</button>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Met Tijdsaanduiding</h4>
+                        <p>Tijdsaanduidingen komen vaak aan het begin of einde:</p>
+                        <table class="grammar-table">
+                            <tr>
+                                <th>Tijd</th>
+                                <th>Onderwerp</th>
+                                <th>Werkwoord</th>
+                                <th>Object</th>
+                            </tr>
+                            <tr>
+                                <td>Vandaag</td>
+                                <td>ik</td>
+                                <td>leer</td>
+                                <td>Nederlands</td>
+                            </tr>
+                            <tr>
+                                <td>(Today)</td>
+                                <td>(I)</td>
+                                <td>(learn)</td>
+                                <td>(Dutch)</td>
+                            </tr>
+                        </table>
+                        <button onclick="playAudio('vandaag-ik-leer')" class="audio-btn">▶️ Luister</button>
+                    </div>
+                </div>
+
+                <div class="verb-section">
+                    <h3>Essentiële Werkwoordsvormen</h3>
+                    <div class="verb-conjugation">
+                        <h4>zijn (to be)</h4>
+                        <table class="conjugation-table">
+                            <tr>
+                                <td>ik ben</td>
+                                <td>(I am)</td>
+                                <button onclick="playAudio('ik-ben')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>jij bent</td>
+                                <td>(you are)</td>
+                                <button onclick="playAudio('jij-bent')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>hij/zij/het is</td>
+                                <td>(he/she/it is)</td>
+                                <button onclick="playAudio('hij-is')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>wij zijn</td>
+                                <td>(we are)</td>
+                                <button onclick="playAudio('wij-zijn')" class="audio-btn">▶️</button>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="verb-conjugation">
+                        <h4>hebben (to have)</h4>
+                        <table class="conjugation-table">
+                            <tr>
+                                <td>ik heb</td>
+                                <td>(I have)</td>
+                                <button onclick="playAudio('ik-heb')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>jij hebt</td>
+                                <td>(you have)</td>
+                                <button onclick="playAudio('jij-hebt')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>hij/zij/het heeft</td>
+                                <td>(he/she/it has)</td>
+                                <button onclick="playAudio('hij-heeft')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>wij hebben</td>
+                                <td>(we have)</td>
+                                <button onclick="playAudio('wij-hebben')" class="audio-btn">▶️</button>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Oefeningen</h3>
+                    <div class="exercise-card">
+                        <h4>Vorm Basiszinnen</h4>
+                        <p>Maak zinnen met de gegeven elementen:</p>
+                        <div class="sentence-builder" id="sentence-builder-1">
+                            <div class="word-bank">
+                                <span class="drag-word">Ik</span>
+                                <span class="drag-word">zij</span>
+                                <span class="drag-word">bent</span>
+                                <span class="drag-word">is</span>
+                                <span class="drag-word">student</span>
+                                <span class="drag-word">leraar</span>
+                            </div>
+                            <div class="sentence-space" data-correct="Ik bent student">
+                                Sleep woorden hier om te vormen: "Ik ben een student"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+        DE: `<h2>Teil 3: Grundgrammatik</h2>
+            <div class="grammar-section">
+                <h3>Satzstruktur (SVO)</h3>
+                <p>Das Niederländische folgt der Reihenfolge Subjekt-Verb-Objekt in Hauptsätzen:</p>
+                
+                <div class="example-section">
+                    <div class="example-card">
+                        <h4>Grundlegendes SVO-Muster</h4>
+                        <table class="grammar-table">
+                            <tr>
+                                <th>Subjekt</th>
+                                <th>Verb</th>
+                                <th>Objekt</th>
+                            </tr>
+                            <tr>
+                                <td>Ik</td>
+                                <td>drink</td>
+                                <td>koffie</td>
+                            </tr>
+                            <tr>
+                                <td>(I)</td>
+                                <td>(drink)</td>
+                                <td>(coffee)</td>
+                            </tr>
+                        </table>
+                        <button onclick="playAudio('ik-drink-koffie')" class="audio-btn">▶️ Hören</button>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Mit Zeitausdruck</h4>
+                        <p>Zeitausdrücke stehen oft am Anfang oder Ende:</p>
+                        <table class="grammar-table">
+                            <tr>
+                                <th>Zeit</th>
+                                <th>Subjekt</th>
+                                <th>Verb</th>
+                                <th>Objekt</th>
+                            </tr>
+                            <tr>
+                                <td>Vandaag</td>
+                                <td>ik</td>
+                                <td>leer</td>
+                                <td>Nederlands</td>
+                            </tr>
+                            <tr>
+                                <td>(Today)</td>
+                                <td>(I)</td>
+                                <td>(learn)</td>
+                                <td>(Dutch)</td>
+                            </tr>
+                        </table>
+                        <button onclick="playAudio('vandaag-ik-leer')" class="audio-btn">▶️ Hören</button>
+                    </div>
+                </div>
+
+                <div class="verb-section">
+                    <h3>Wichtige Verbformen</h3>
+                    <div class="verb-conjugation">
+                        <h4>zijn (to be)</h4>
+                        <table class="conjugation-table">
+                            <tr>
+                                <td>ik ben</td>
+                                <td>(I am)</td>
+                                <button onclick="playAudio('ik-ben')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>jij bent</td>
+                                <td>(you are)</td>
+                                <button onclick="playAudio('jij-bent')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>hij/zij/het is</td>
+                                <td>(he/she/it is)</td>
+                                <button onclick="playAudio('hij-is')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>wij zijn</td>
+                                <td>(we are)</td>
+                                <button onclick="playAudio('wij-zijn')" class="audio-btn">▶️</button>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="verb-conjugation">
+                        <h4>hebben (to have)</h4>
+                        <table class="conjugation-table">
+                            <tr>
+                                <td>ik heb</td>
+                                <td>(I have)</td>
+                                <button onclick="playAudio('ik-heb')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>jij hebt</td>
+                                <td>(you have)</td>
+                                <button onclick="playAudio('jij-hebt')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>hij/zij/het heeft</td>
+                                <td>(he/she/it has)</td>
+                                <button onclick="playAudio('hij-heeft')" class="audio-btn">▶️</button>
+                            </tr>
+                            <tr>
+                                <td>wij haben</td>
+                                <td>(we have)</td>
+                                <button onclick="playAudio('wij-hebben')" class="audio-btn">▶️</button>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Übungen</h3>
+                    <div class="exercise-card">
+                        <h4>Bildung einfacher Sätze</h4>
+                        <p>Erstellen Sie Sätze mit den angegebenen Elementen:</p>
+                        <div class="sentence-builder" id="sentence-builder-1">
+                            <div class="word-bank">
+                                <span class="drag-word">Ik</span>
+                                <span class="drag-word">zij</span>
+                                <span class="drag-word">bent</span>
+                                <span class="drag-word">is</span>
+                                <span class="drag-word">student</span>
+                                <span class="drag-word">leraar</span>
+                            </div>
+                            <div class="sentence-space" data-correct="Ik bent student">
+                                Ziehen Sie Wörter hierher, um zu bilden: "Ich bin ein Student"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+        NL: `<h2>Deel 3: Grammatica</h2>
+            <div class="grammar-section">
+                <h3>Basis Grammaticaregels</h3>
+                
+                <div class="grammar-topic">
+                    <h4>Lidwoorden</h4>
+                    <p>In het Nederlands hebben we drie lidwoorden:</p>
+                    <ul>
+                        <li>'de' - voor mannelijke en vrouwelijke woorden</li>
+                        <li>'het' - voor onzijdige woorden</li>
+                        <li>'een' - onbepaald lidwoord</li>
+                    </ul>
+                    <div class="examples">
+                        <p>Bijvoorbeeld:</p>
+                        <ul>
+                            <li>de man (the man)</li>
+                            <li>het huis (the house)</li>
+                            <li>een boek (a book)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grammar-topic">
+                    <h4>Werkwoordvervoegingen</h4>
+                    <p>Basis werkwoordvervoeging in de tegenwoordige tijd:</p>
+                    <table>
+                        <tr>
+                            <th>Persoon</th>
+                            <th>Vervoeging (werken)</th>
+                        </tr>
+                        <tr>
+                            <td>ik</td>
+                            <td>werk</td>
+                        </tr>
+                        <tr>
+                            <td>jij/u</td>
+                            <td>werkt</td>
+                        </tr>
+                        <tr>
+                            <td>hij/zij/het</td>
+                            <td>werkt</td>
+                        </tr>
+                        <tr>
+                            <td>wij</td>
+                            <td>werken</td>
+                        </tr>
+                        <tr>
+                            <td>jullie</td>
+                            <td>werken</td>
+                        </tr>
+                        <tr>
+                            <td>zij</td>
+                            <td>werken</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Oefeningenvoorbeelden</h3>
+                    <div class="exercise">
+                        <p>Vul het juiste lidwoord in:</p>
+                        <ol>
+                            <li>___ tafel (table)</li>
+                            <li>___ boek (book)</li>
+                            <li>___ man (man)</li>
+                        </ol>
+                        <p class="answer-toggle" onclick="toggleAnswer('articles')">Toon antwoorden</p>
+                        <div class="answer" id="articles-answer" style="display: none;">
+                            <ol>
+                                <li>de tafel</li>
+                                <li>het boek</li>
+                                <li>de man</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>`
     }
 });
 ContentManager.addContent('dutch2', {
@@ -547,25 +1454,305 @@ ContentManager.addContent('exercises', {
 ContentManager.addContent('exercise1', {
     navigation: ['home', 'dutch', 'exercises'],
     body: {
-        EN: `<h2>Basic Pronunciation</h2><p>Coming soon...</p>`,
-        NL: `<h2>Basis Uitspraak</h2><p>Binnenkort beschikbaar...</p>`,
-        FR: `<h2>Prononciation de Base</h2><p>Bientôt disponible...</p>`,
-        DE: `<h2>Grundlegende Aussprache</h2><p>Demnächst verfügbar...</p>`,
-        IT: `<h2>Pronuncia di Base</h2><p>Prossimamente...</p>`,
-        PT: `<h2>Pronúncia Básica</h2><p>Em breve...</p>`,
-        SV: `<h2>Grundläggande Uttal</h2><p>Kommer snart...</p>`
+        EN: `<h2>Exercise 1: Basic Pronunciation</h2>
+            <div class="exercise-section">
+                <h3>1. Vowel Sounds Practice</h3>
+                <div class="sound-practice">
+                    <div class="practice-card">
+                        <h4>ui Sound</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>huis</span>
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('huis')" class="practice-btn">Practice</button>
+                            </div>
+                            <div class="word-item">
+                                <span>muis</span>
+                                <button onclick="playAudio('muis')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('muis')" class="practice-btn">Practice</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h4>eu Sound</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>deur</span>
+                                <button onclick="playAudio('deur')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('deur')" class="practice-btn">Practice</button>
+                            </div>
+                            <div a="word-item">
+                                <span>neus</span>
+                                <button onclick="playAudio('neus')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('neus')" class="practice-btn">Practice</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2. Consonant Combinations</h3>
+                <div class="sound-practice">
+                    <div class="practice-card">
+                        <h4>sch Sound</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>school</span>
+                                <button onclick="playAudio('school')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('school')" class="practice-btn">Practice</button>
+                            </div>
+                            <div class="word-item">
+                                <span>schip</span>
+                                <button onclick="playAudio('schip')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('schip')" class="practice-btn">Practice</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>3. Word Builder Game</h3>
+                <div class="word-builder-game">
+                    <p>Drag the letters to form Dutch words:</p>
+                    <div class="letter-bank">
+                        <span class="drag-letter">h</span>
+                        <span class="drag-letter">u</span>
+                        <span class="drag-letter">i</span>
+                        <span class="drag-letter">s</span>
+                    </div>
+                    <div class="word-space" data-correct="huis">
+                        Form the word "house"
+                    </div>
+                </div>
+            </div>`,
+        NL: `<h2>Oefening 1: Basis Uitspraak</h2>
+            <div class="exercise-section">
+                <h3>1. Klinkerklanken Oefenen</h3>
+                <div class="sound-practice">
+                    <div class="practice-card">
+                        <h4>ui Klank</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>huis</span>
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('huis')" class="practice-btn">Oefen</button>
+                            </div>
+                            <div class="word-item">
+                                <span>muis</span>
+                                <button onclick="playAudio('muis')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('muis')" class="practice-btn">Oefen</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h4>eu Klank</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>deur</span>
+                                <button onclick="playAudio('deur')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('deur')" class="practice-btn">Oefen</button>
+                            </div>
+                            <div class="word-item">
+                                <span>neus</span>
+                                <button onclick="playAudio('neus')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('neus')" class="practice-btn">Oefen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2. Medeklinkercombinaties</h3>
+                <div class="sound-practice">
+                    <div class="practice-card">
+                        <h4>sch Klank</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>school</span>
+                                <button onclick="playAudio('school')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('school')" class="practice-btn">Oefen</button>
+                            </div>
+                            <div class="word-item">
+                                <span>schip</span>
+                                <button onclick="playAudio('schip')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('schip')" class="practice-btn">Oefen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>3. Woordbouwer Spel</h3>
+                <div class="word-builder-game">
+                    <p>Sleep de letters om Nederlandse woorden te vormen:</p>
+                    <div class="letter-bank">
+                        <span class="drag-letter">h</span>
+                        <span class="drag-letter">u</span>
+                        <span class="drag-letter">i</span>
+                        <span class="drag-letter">s</span>
+                    </div>
+                    <div class="word-space" data-correct="huis">
+                        Vorm het woord "huis"
+                    </div>
+                </div>
+            </div>`,
+        DE: `<h2>Übung 1: Grundlegende Aussprache</h2>
+            <div class="exercise-section">
+                <h3>1. Vokallaute Übung</h3>
+                <div class="sound-practice">
+                    <div class="practice-card">
+                        <h4>ui Laut</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>huis (Haus)</span>
+                                <button onclick="playAudio('huis')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('huis')" class="practice-btn">Üben</button>
+                            </div>
+                            <div class="word-item">
+                                <span>muis (Maus)</span>
+                                <button onclick="playAudio('muis')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('muis')" class="practice-btn">Üben</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <h4>eu Laut</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>deur (Tür)</span>
+                                <button onclick="playAudio('deur')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('deur')" class="practice-btn">Üben</button>
+                            </div>
+                            <div class="word-item">
+                                <span>neus (Nase)</span>
+                                <button onclick="playAudio('neus')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('neus')" class="practice-btn">Üben</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>2. Konsonantenkombinationen</h3>
+                <div class="sound-practice">
+                    <div class="practice-card">
+                        <h4>sch Laut</h4>
+                        <div class="word-list">
+                            <div class="word-item">
+                                <span>school (Schule)</span>
+                                <button onclick="playAudio('school')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('school')" class="practice-btn">Üben</button>
+                            </div>
+                            <div class="word-item">
+                                <span>schip (Schiff)</span>
+                                <button onclick="playAudio('schip')" class="audio-btn">▶️</button>
+                                <button onclick="checkPronunciation('schip')" class="practice-btn">Üben</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>3. Wortbau-Spiel</h3>
+                <div class="word-builder-game">
+                    <p>Ziehen Sie die Buchstaben, um niederländische Wörter zu bilden:</p>
+                    <div class="letter-bank">
+                        <span class="drag-letter">h</span>
+                        <span class="drag-letter">u</span>
+                        <span class="drag-letter">i</span>
+                        <span class="drag-letter">s</span>
+                    </div>
+                    <div class="word-space" data-correct="huis">
+                        Bilden Sie das Wort "Haus"
+                    </div>
+                </div>
+            </div>`
     }
 });
 ContentManager.addContent('exercise2', {
     navigation: ['home', 'dutch', 'exercises'],
     body: {
-        EN: `<h2>Common Phrases</h2><p>Coming soon...</p>`,
-        NL: `<h2>Veelgebruikte Zinnen</h2><p>Binnenkort beschikbaar...</p>`,
-        FR: `<h2>Phrases Courantes</h2><p>Bientôt disponible...</p>`,
-        DE: `<h2>Häufige Sätze</h2><p>Demnächst verfügbar...</p>`,
-        IT: `<h2>Frasi Comuni</h2><p>Prossimamente...</p>`,
-        PT: `<h2>Frases Comuns</h2><p>Em breve...</p>`,
-        SV: `<h2>Vanliga Fraser</h2><p>Kommer snart...</p>`
+        EN: `<h2>Exercise 2: Common Phrases</h2>
+            <div class="exercise-section">
+                <h3>1. Greetings and Introductions</h3>
+                <div class="phrase-practice">
+                    ${ExerciseTemplates.pronounciationExercise('goedemorgen', 'good morning')}
+                    ${ExerciseTemplates.pronounciationExercise('hallo', 'hello')}
+                    ${ExerciseTemplates.pronounciationExercise('tot ziens', 'goodbye')}
+                </div>
+
+                <h3>2. Practice Conversations</h3>
+                <div class="conversation-practice">
+                    ${ExerciseTemplates.multipleChoice(
+            'How would you respond to "Hoe gaat het?" (How are you?)',
+            ['Het gaat goed', 'Tot ziens', 'Dank je wel'],
+            'Het gaat goed',
+            'hoe-gaat-het'
+        )}
+                </div>
+
+                <h3>3. Sentence Building</h3>
+                <div class="sentence-practice">
+                    ${ExerciseTemplates.sentenceBuilder(
+            ['Ik', 'ben', 'een', 'student'],
+            'Ik ben een student',
+            'Create the sentence: "I am a student"'
+        )}
+                </div>
+            </div>`,
+        NL: `<h2>Oefening 2: Veelgebruikte Zinnen</h2>
+            <div class="exercise-section">
+                <h3>1. Begroetingen en Introducties</h3>
+                <div class="phrase-practice">
+                    ${ExerciseTemplates.pronounciationExercise('goedemorgen', 'goedemorgen')}
+                    ${ExerciseTemplates.pronounciationExercise('hallo', 'hallo')}
+                    ${ExerciseTemplates.pronounciationExercise('tot ziens', 'tot ziens')}
+                </div>
+
+                <h3>2. Oefen Gesprekken</h3>
+                <div class="conversation-practice">
+                    ${ExerciseTemplates.multipleChoice(
+            'Hoe zou je antwoorden op "Hoe gaat het?"',
+            ['Het gaat goed', 'Tot ziens', 'Dank je wel'],
+            'Het gaat goed',
+            'hoe-gaat-het'
+        )}
+                </div>
+
+                <h3>3. Zinnen Bouwen</h3>
+                <div class="sentence-practice">
+                    ${ExerciseTemplates.sentenceBuilder(
+            ['Ik', 'ben', 'een', 'student'],
+            'Ik ben een student',
+            'Maak de zin: "Ik ben een student"'
+        )}
+                </div>
+            </div>`,
+        DE: `<h2>Übung 2: Häufige Sätze</h2>
+            <div class="exercise-section">
+                <h3>1. Begrüßungen und Vorstellungen</h3>
+                <div class="phrase-practice">
+                    ${ExerciseTemplates.pronounciationExercise('goedemorgen', 'Guten Morgen')}
+                    ${ExerciseTemplates.pronounciationExercise('hallo', 'Hallo')}
+                    ${ExerciseTemplates.pronounciationExercise('tot ziens', 'Auf Wiedersehen')}
+                </div>
+
+                <h3>2. Übungsgespräche</h3>
+                <div class="conversation-practice">
+                    ${ExerciseTemplates.multipleChoice(
+            'Wie würden Sie auf "Hoe gaat het?" (Wie geht es Ihnen?) antworten?',
+            ['Het gaat goed', 'Tot ziens', 'Dank je wel'],
+            'Het geht gut',
+            'hoe-gaat-het'
+        )}
+                </div>
+
+                <h3>3. Satzbildung</h3>
+                <div class="sentence-practice">
+                    ${ExerciseTemplates.sentenceBuilder(
+            ['Ik', 'ben', 'een', 'student'],
+            'Ik ben ein student',
+            'Bilden Sie den Satz: "Ich bin ein Student"'
+        )}
+                </div>
+            </div>`
     }
 });
 
