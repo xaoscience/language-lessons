@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,13 +14,22 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="data/flagicons/css/flag-icons.css">
     <noscript>
-        <meta http-equiv="refresh" content="0; url=static/home.html">
+        <meta http-equiv="refresh" content="0; url=static/EN/home.html">
         <style>
-            body { background: linear-gradient(to bottom, #174235, #442a0d); }
-            #background-canvas, .animation-button, #hypno-orb, #controls-container { display: none; }
+            body {
+                background: linear-gradient(to bottom, #174235, #442a0d);
+            }
+
+            #background-canvas,
+            .animation-button,
+            #hypno-orb,
+            #controls-container {
+                display: none;
+            }
         </style>
     </noscript>
 </head>
+
 <body>
     <canvas id="background-canvas"></canvas>
     <header id="dynamic-header"></header>
@@ -36,10 +46,11 @@
         <button id="next-button" class="animation-button" data-animation="animation2">&#8594;</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-            integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9"
-            crossorigin="anonymous"></script>
+        integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9"
+        crossorigin="anonymous"></script>
     <script src="js/content.js"></script>
     <script src="js/contentLoader.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
